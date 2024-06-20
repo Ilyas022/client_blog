@@ -1,0 +1,92 @@
+@import 'theme.module.scss';
+
+/*
+	Common media query mixin.
+
+	Usage:
+	.element {
+		@include screen('tablet') {
+			width: 90%;
+		}
+		@include screen('desktop') {
+			width: 85%;
+		}
+		@include screen('(min-width: 999px)') {
+			width: 1280px;
+		}
+	}
+ */
+
+@mixin screen($size) {
+	$mediaQueries: (
+		'mobile-small': $media-mobile-small,
+		'mobile': $media-mobile,
+		'mobile-portrait': $media-mobile-portrait,
+		'mobile-landscape': $media-mobile-landscape,
+		'tablet': $media-tablet,
+		'tablet-portrait': $media-tablet-portrait,
+		'tablet-landscape': $media-tablet-landscape,
+		'desktop': $media-desktop,
+		'desktop-hd': $media-desktop-hd,
+		'non-mobile': $media-non-mobile,
+		'non-desktop': $media-non-desktop,
+		'small-desktop': $media-small-desktop,
+	);
+
+	// Use predefined media query
+	@each $key, $value in $mediaQueries {
+		@if $key == $size {
+			@media only screen and #{$value} {
+				@content;
+			}
+		}
+	}
+
+	// Use custom media query
+	@if map-has-key($mediaQueries, $size) != true {
+		@media only screen and #{$size} {
+			@content;
+		}
+	}
+}
+
+// Sizes
+
+// Text sizes
+// -----
+@mixin textS() {
+	font-size: 16px;
+	line-height: 175%;
+}
+
+@mixin textMBold() {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 133%;
+}
+
+@mixin textXs() {
+	font-size: 14px;
+	line-height: 143%;
+}
+
+@mixin textXsMedium() {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 143%;
+}
+
+// Headings
+// -----
+
+@mixin h4() {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 133%;
+}
+
+@mixin h5() {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 160%;
+}

@@ -1,0 +1,38 @@
+.navbar {
+	display: flex;
+	align-items: center;
+	gap: $s;
+
+	@include screen('tablet') {
+		gap: $xs;
+	}
+
+	@include screen('mobile') {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.link {
+	transition: color 0.3s;
+
+	&:hover {
+		color: $ColorButtonHover;
+	}
+}
+
+.activeLink {
+	color: $ColorButton;
+}
+
+.videoBtn {
+	padding: $xs;
+	@include textMBold();
+	color: $ColorPrimary;
+	background-color: $ColorWhite;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+}

@@ -1,0 +1,8 @@
+.logo {
+	@include h4();
+	cursor: default;
+
+	@include screen('tablet') {
+		@include h5();
+	}
+}
