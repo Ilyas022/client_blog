@@ -1,1 +1,11 @@
 @import '@/styles/index.scss';
+
+._btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+}

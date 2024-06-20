@@ -1,5 +1,6 @@
 'use client'
 
+import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -26,7 +27,7 @@ function GreetingSection() {
 					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
 					nulla pariatur. Excepteur sint occaecat cupidatat non proident.
 				</p>
-				<Link href={POST_PAGE_ROUTE} className={css.btn}>
+				<Link href={POST_PAGE_ROUTE} className={cn(css.btn, '_btn')}>
 					Read More &gt;
 				</Link>
 			</div>

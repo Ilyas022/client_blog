@@ -7,8 +7,13 @@
 	margin-bottom: $xxl + 8px;
 	@include textS();
 
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
 	@include screen('mobile') {
 		height: $xl3 + 100px;
+		margin-bottom: $s;
 	}
 }
 
@@ -80,12 +85,9 @@
 }
 
 .btn {
-	display: inline-block;
 	padding: $xs;
 	@include textMBold();
-	color: $ColorPrimary;
 	background-color: $ColorButton;
-	transition: background-color 0.3s;
 
 	@include screen('mobile') {
 		padding: $xxs $xs;

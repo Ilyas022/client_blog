@@ -1,3 +1,4 @@
+import FeaturedSection from './components/FeaturedSection'
 import GreetingSection from './components/GreetingSection'
 import css from './HomePage.module.scss'
 
@@ -6,6 +7,7 @@ export default function Home() {
 		<main>
 			<div className={css.container}>
 				<GreetingSection />
+				<FeaturedSection />
 			</div>
 		</main>
 	)
