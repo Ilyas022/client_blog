@@ -1,0 +1,128 @@
+.section {
+	display: flex;
+	height: $xl5 + 20px;
+	align-items: center;
+	color: $ColorWhite;
+	max-width: $xl6 + 4px;
+	margin-bottom: $xxl + 8px;
+	@include textS();
+
+	@include screen('mobile') {
+		height: $xl3 + 100px;
+	}
+}
+
+.imgContainer {
+	position: absolute;
+	top: $l;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: $xl5 + 20px;
+	background: radial-gradient(80.99% 71.93% at 74.58% 0%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+
+	@include screen('tablet') {
+		top: $m + 8px;
+	}
+
+	@include screen('mobile') {
+		top: $m + 8px;
+		height: $xl3 + 100px;
+	}
+}
+
+.bgImg {
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+	object-fit: cover;
+}
+
+.heading {
+	@include textS();
+	text-transform: uppercase;
+	margin-bottom: $xs + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $xs;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+	}
+
+	@include screen('mobile-small') {
+		@include textXs();
+	}
+
+	& > span {
+		font-weight: 700;
+	}
+}
+
+.title {
+	@include title();
+	margin-bottom: $xs + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $xs;
+		@include h1();
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+		@include h2();
+	}
+
+	@include screen('mobile-small') {
+		@include h3();
+	}
+}
+
+.btn {
+	display: inline-block;
+	padding: $xs;
+	@include textMBold();
+	color: $ColorPrimary;
+	background-color: $ColorButton;
+	transition: background-color 0.3s;
+
+	@include screen('mobile') {
+		padding: $xxs $xs;
+
+		@include textS();
+	}
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+}
+
+.nameMarker {
+	color: $ColorButton;
+}
+
+.userInfo {
+	margin-bottom: $xs;
+
+	@include screen('mobile-small') {
+		@include textXs();
+		margin-bottom: $xxs;
+	}
+}
+
+.description {
+	margin-bottom: $m;
+
+	@include screen('tablet') {
+		margin-bottom: $s;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xs;
+	}
+
+	@include screen('mobile-small') {
+		@include textXs();
+	}
+}

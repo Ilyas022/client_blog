@@ -3,7 +3,12 @@
 import { useEffect, useState } from 'react'
 
 export const useScreenDetector = () => {
-	const [width, setWidth] = useState(0)
+	const [width, setWidth] = useState(() => {
+		if (typeof window !== 'undefined') {
+			return window.innerWidth
+		}
+		return 0
+	})
 
 	const laptopResolution = 768
 	const pcResolution = 1024
