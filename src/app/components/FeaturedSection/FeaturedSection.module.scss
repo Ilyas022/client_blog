@@ -2,10 +2,16 @@
 	display: flex;
 	gap: $s;
 	color: $ColorBlack;
+	margin-bottom: $xxl + 8px;
 	@include h4();
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
 
 	@include screen('mobile') {
 		flex-direction: column;
+		margin-bottom: $s;
 	}
 }
 
