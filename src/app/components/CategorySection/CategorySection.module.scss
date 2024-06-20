@@ -1,0 +1,82 @@
+.section {
+	@include textS();
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.title {
+	@include h2();
+	text-align: center;
+	margin-bottom: $m;
+
+	@include screen('mobile') {
+		@include h3();
+	}
+}
+
+.categories {
+	display: flex;
+	gap: $s;
+	justify-content: space-between;
+
+	@include screen('non-desktop') {
+		gap: $xs + 4px;
+		flex-wrap: wrap;
+	}
+
+	@include screen('mobile') {
+		justify-content: center;
+	}
+}
+
+.category {
+	padding: $s;
+	border: $xxs - 7px solid $ColorTextLight;
+	transition: background-color 0.3s;
+
+	@include screen('non-desktop') {
+		flex: 0 1 31%;
+	}
+
+	@include screen('mobile') {
+		flex-basis: 45%;
+		padding: $xs + 4px;
+	}
+
+	@include screen('(max-width: 500px)') {
+		flex-basis: 80%;
+	}
+
+	@include screen('mobile-small') {
+		flex-basis: 100%;
+	}
+
+	&:hover {
+		border-color: transparent;
+		background-color: $ColorButton;
+	}
+
+	&Img {
+		width: 100%;
+		height: 100%;
+	}
+
+	&Title {
+		margin-bottom: $xxs - 4px;
+	}
+}
+
+.imgContainer {
+	border-radius: $xxs + 4px;
+	width: $m;
+	height: $m;
+	background-color: $ColorPostHover;
+	margin-bottom: $xs;
+}
