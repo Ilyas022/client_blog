@@ -1,4 +1,5 @@
 import AboutSection from './components/AboutSection'
+import AuthorsSection from './components/AuthorsSection'
 import CategorySection from './components/CategorySection'
 import FeaturedSection from './components/FeaturedSection'
 import GreetingSection from './components/GreetingSection'
@@ -14,6 +15,7 @@ export default function Home() {
 				<AboutSection />
 				<CategorySection />
 				<ReasonSection />
+				<AuthorsSection />
 			</div>
 		</main>
 	)
