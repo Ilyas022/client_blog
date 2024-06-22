@@ -1,0 +1,81 @@
+.page {
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $m;
+	}
+}
+
+.header {
+	background-color: $ColorPurpleLight;
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xs;
+	}
+}
+
+.headerContainer {
+	padding: $l $xs + 4px;
+	width: $xl2 + 50px;
+	margin: 0 auto;
+	text-align: center;
+
+	@include screen('mobile') {
+		padding: $s + 8px $xs + 4px;
+	}
+}
+
+.title {
+	@include h1();
+	margin-bottom: 4px;
+
+	@include screen('mobile') {
+		@include h2();
+	}
+}
+
+.container {
+	max-width: $xl6 - 2px;
+	padding: 0 $xs - 1px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.privacyTitle {
+	margin-bottom: $s;
+
+	@include screen('mobile') {
+		margin-bottom: $xs;
+	}
+}
+
+.privacySubtitle {
+	@include h2();
+	margin-bottom: $xs + 8px;
+
+	@include screen('mobile') {
+		@include h3();
+	}
+}
+
+.privacyText {
+	@include textS();
+	margin-bottom: $s;
+
+	@include screen('mobile') {
+		margin-bottom: $xs;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
