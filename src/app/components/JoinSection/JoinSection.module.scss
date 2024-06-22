@@ -1,0 +1,38 @@
+.section {
+	@include textS();
+	max-width: $xl3 + 14px;
+	margin: 0 auto $xxl + 8px;
+	text-align: center;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.title {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('mobile') {
+		@include h3();
+	}
+}
+
+.text {
+	color: $ColorTextLight;
+	margin-bottom: $s;
+}
+
+.btn {
+	background-color: $ColorButton;
+	padding: $xs $m;
+	@include textMBold();
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+}

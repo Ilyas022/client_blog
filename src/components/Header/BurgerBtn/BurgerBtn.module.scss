@@ -1,0 +1,69 @@
+.burgerBtn {
+	display: block;
+	position: relative;
+	z-index: 10;
+}
+
+.input {
+	position: absolute;
+	visibility: hidden;
+
+	&:checked + label::before {
+		top: $xxs + 1px;
+		transform: rotate(45deg);
+		box-shadow: 0 6px 0 transparent;
+		transition:
+			box-shadow 0.15s,
+			top 0.3s,
+			transform 0.3s 0.15s;
+		background-color: $ColorButton;
+	}
+
+	&:checked + label::after {
+		bottom: $xxs + 1px;
+		transform: rotate(-45deg);
+		transition:
+			bottom 0.3s,
+			transform 0.3s 0.15s;
+		background-color: $ColorButton;
+	}
+}
+
+.label {
+	position: relative;
+	z-index: 10;
+	cursor: pointer;
+	display: block;
+	border: none;
+	background: transparent;
+	width: $xs + 9px;
+	height: $xs + 4px;
+
+	&:before,
+	&:after {
+		content: '';
+		left: 0;
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: $xxs - 6px;
+		border-radius: $xxs + 2px;
+		background-color: $ColorButton;
+	}
+
+	&:before {
+		top: 0;
+		box-shadow: 0 9px 0 $ColorButton;
+		transition:
+			box-shadow 0.3s 0.15s,
+			top 0.3s 0.15s,
+			transform 0.3s;
+	}
+
+	&:after {
+		bottom: 0;
+		transition:
+			bottom 0.3s 0.15s,
+			transform 0.3s;
+	}
+}

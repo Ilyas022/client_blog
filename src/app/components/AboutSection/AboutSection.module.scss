@@ -1,0 +1,121 @@
+.section {
+	@include textS();
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: flex-end;
+	height: $xs + 7;
+}
+.yellowItem {
+	display: block;
+	width: $xl2 - 18px;
+	background-color: $ColorButton;
+}
+.purpleItem {
+	display: block;
+	width: $xl6 - 21px;
+	background-color: $ColorUser;
+}
+
+.container {
+	display: flex;
+	gap: $l - 19px;
+	padding: $xl - 4px $l $xl - 4px;
+	background-color: $ColorPurpleLight;
+
+	> div {
+		flex: 1 1 50%;
+	}
+
+	@include screen('tablet') {
+		gap: $s - 2px;
+		padding: $m + 2px;
+	}
+
+	@include screen('mobile') {
+		flex-direction: column;
+		padding: $xs + 4px;
+		gap: $xs - 1px;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	margin-bottom: $xs + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $xxs + 2px;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xxs - 3px;
+		text-align: center;
+	}
+}
+
+.desc {
+	@include h2();
+	color: $ColorText;
+	margin-bottom: $xs;
+	max-width: $xl3 + 94px;
+
+	@include screen('tablet') {
+		@include h4();
+		margin-bottom: $xxs + 2px;
+	}
+
+	@include screen('mobile') {
+		@include h5();
+		margin-bottom: $xxs - 3px;
+	}
+}
+
+.info {
+	color: $ColorTextLight;
+	margin-bottom: $xs;
+}
+
+.link {
+	@include textMBold();
+	color: $ColorUser;
+	transition: color 0.3s;
+
+	&:hover {
+		color: $ColorButtonHover;
+	}
+}
+
+.mission {
+	max-width: $xl3 + 116px;
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+
+	&Desc {
+		@include h3();
+		max-width: $xl3;
+		margin-bottom: $xs;
+
+		@include screen('tablet') {
+			@include h4();
+			margin-bottom: $xxs + 2px;
+		}
+
+		@include screen('mobile') {
+			@include h5();
+			max-width: none;
+			margin-bottom: $xxs - 3px;
+		}
+	}
+}
