@@ -1,0 +1,24 @@
+.menu {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 5;
+	display: none;
+	width: 100%;
+	align-items: stretch;
+	background-color: $ColorBg;
+	transform: translateX(100%);
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+	@include screen('mobile') {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: $xl;
+	}
+}
+
+.menuOpened {
+	transform: translateX(0);
+}

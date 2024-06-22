@@ -1,0 +1,14 @@
+.header {
+	background-color: $ColorPrimary;
+	color: $ColorWhite;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	max-width: $xl9 - 7px;
+	padding: $xs - 4px $xs + 4px;
+	margin: 0 auto;
+}
