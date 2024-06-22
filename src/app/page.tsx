@@ -4,6 +4,7 @@ import CategorySection from './components/CategorySection'
 import FeaturedSection from './components/FeaturedSection'
 import GreetingSection from './components/GreetingSection'
 import ReasonSection from './components/ReasonSection'
+import TestimonialsSection from './components/TestimonialsSection'
 import css from './HomePage.module.scss'
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
 				<CategorySection />
 				<ReasonSection />
 				<AuthorsSection />
+				<TestimonialsSection />
 			</div>
 		</main>
 	)

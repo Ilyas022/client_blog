@@ -1,0 +1,118 @@
+.carousel {
+	position: relative;
+}
+
+.container {
+	position: relative;
+	width: $xl3 + 69px;
+	height: $xl2 + 9px;
+	overflow: hidden;
+
+	@include screen('tablet') {
+		height: $xl1 + 36px;
+		width: 42vw;
+	}
+
+	@include screen('mobile') {
+		width: 100%;
+	}
+
+	@include screen('(max-width: 500px)') {
+		height: $xl2 + 60px;
+	}
+}
+
+.div {
+	position: absolute;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	transition: all 0.3s;
+}
+
+.item {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	flex-shrink: 0;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: $xs + 8px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	@include screen('tablet') {
+		gap: $xs - 1px;
+	}
+
+	@include screen('(max-width: 500px)') {
+		position: absolute;
+		right: auto;
+		left: 0;
+	}
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+
+	&:disabled {
+		background-color: $ColorTextLight;
+	}
+}
+
+.prevBtn {
+	width: $m;
+	height: $m;
+	background-color: $ColorWhite;
+}
+.nextBtn {
+	width: $m + 14;
+	height: $m + 14;
+	color: $ColorWhite;
+
+	background-color: $ColorPrimary;
+}
+
+.user {
+	display: flex;
+	gap: $xs;
+
+	@include screen('mobile') {
+		position: absolute;
+		bottom: $xxs - 3px;
+	}
+
+	@include screen('(max-width: 500px)') {
+		position: absolute;
+		bottom: $l - 2px;
+	}
+
+	&Icon {
+		width: $m;
+		height: $m;
+		border-radius: 50%;
+	}
+}
+
+.title {
+	margin-bottom: $xxl + 1px;
+	@include h4();
+
+	@include screen('tablet') {
+		@include h5();
+		margin-bottom: $m + 2px;
+	}
+
+	@include screen('mobile') {
+		@include h5();
+		margin-bottom: $xl - 10px;
+	}
+}
