@@ -1,0 +1,110 @@
+.section {
+	@include textS();
+	color: $ColorPrimary;
+	margin-bottom: $m + 16px;
+}
+
+.title {
+	@include h1();
+	padding-bottom: $s;
+	border-bottom: $xxs - 7px solid $ColorTextLight;
+	margin-bottom: $m + 16px;
+
+	@include screen('tablet') {
+		@include h2();
+		padding-bottom: $xs;
+		margin-bottom: $s;
+	}
+
+	@include screen('mobile') {
+		@include h3();
+		padding-bottom: $xs;
+		margin-bottom: $s;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: $m + 16px;
+	margin-bottom: $m + 16px;
+
+	@include screen('mobile') {
+		gap: $m - 8px;
+	}
+}
+
+.post {
+	display: flex;
+	gap: $s;
+	align-items: center;
+
+	@include screen('mobile') {
+		flex-direction: column;
+		margin: 0 auto;
+		gap: $xs - 1px;
+	}
+}
+
+.postCategory {
+	text-transform: uppercase;
+	letter-spacing: 0.19em;
+	color: $ColorUser;
+	margin-bottom: $xs + 4px;
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+	}
+}
+
+.postTitle {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('non-desktop') {
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		@include h4();
+		margin-bottom: $xxs;
+	}
+}
+
+.postText {
+	color: $ColorTextLight;
+}
+
+.postImg {
+	max-width: $xl3 + 90px;
+	max-height: $xl2 + 18px;
+	object-fit: cover;
+
+	@include screen('non-desktop') {
+		max-width: none;
+		max-height: none;
+		width: 40%;
+		height: auto;
+	}
+
+	@include screen('mobile') {
+		width: 100%;
+		max-height: $xl2 + 30px;
+	}
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: $xs + 1px;
+}
+
+.controlBtn {
+	@include h3();
+
+	&:disabled {
+		@include h4();
+		color: $ColorTextLight;
+	}
+}
