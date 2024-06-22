@@ -6,6 +6,7 @@ import GreetingSection from './components/GreetingSection'
 import ReasonSection from './components/ReasonSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import css from './HomePage.module.scss'
+import JoinSection from './JoinSection'
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 				<ReasonSection />
 				<AuthorsSection />
 				<TestimonialsSection />
+				<JoinSection />
 			</div>
 		</main>
 	)
