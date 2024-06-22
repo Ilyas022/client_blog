@@ -8,10 +8,12 @@
 
 	@include screen('tablet') {
 		padding-top: $m + 2px;
+		margin-bottom: $m;
 	}
 
 	@include screen('mobile') {
 		padding-top: $s - 2px;
+		margin-bottom: $s;
 	}
 }
 
@@ -42,7 +44,7 @@
 
 	@include screen('small-desktop') {
 		max-width: $xl6 + 100px;
-		max-height: $x3 + 20px;
+		max-height: $xl3 + 20px;
 		margin: 0 auto $s + 8px;
 	}
 
