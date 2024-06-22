@@ -1,0 +1,88 @@
+.section {
+	@include textS();
+	color: $ColorPrimary;
+	background-color: $ColorPurpleLight;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	gap: $xxl + 21px;
+	max-width: $xl8 + 30px;
+	width: 100%;
+	padding: $l $xs - 1px;
+	margin: 0 auto;
+
+	@include screen('small-desktop') {
+		gap: $m + 2px;
+		justify-content: space-between;
+	}
+
+	@include screen('non-desktop') {
+		flex-direction: column-reverse;
+		padding: $s + 8px $xs - 1px;
+		gap: $s + 8px;
+	}
+
+	@include screen('mobile') {
+		padding: $xs - 1px;
+		gap: $s - 2px;
+	}
+}
+
+.postData {
+	max-width: $xl4;
+}
+
+.title {
+	text-transform: uppercase;
+	margin-bottom: $xs;
+}
+
+.postTitle {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('mobile') {
+		@include h4();
+	}
+}
+
+.postInfo {
+	@include textXsMedium();
+	margin-bottom: $xs;
+}
+
+.nameMarker {
+	color: $ColorUser;
+}
+
+.postText {
+	color: $ColorTextLight;
+	margin-bottom: $s;
+}
+
+.postImg {
+	max-width: $xl3 + 115px;
+	max-height: $xl2 + 59px;
+	object-fit: cover;
+
+	@include screen('non-desktop') {
+		width: 80%;
+		max-width: none;
+	}
+
+	@include screen('(max-width: 600px)') {
+		height: 60vh;
+	}
+
+	@include screen('mobile') {
+		width: 100%;
+		max-width: none;
+	}
+}
+
+.btn {
+	padding: $xs $m;
+	background-color: $ColorButton;
+}

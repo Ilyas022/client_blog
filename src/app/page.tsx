@@ -6,12 +6,11 @@ import GreetingSection from './components/GreetingSection'
 import JoinSection from './components/JoinSection'
 import ReasonSection from './components/ReasonSection'
 import TestimonialsSection from './components/TestimonialsSection'
-import css from './HomePage.module.scss'
 
 export default function Home() {
 	return (
 		<main>
-			<div className={css.container}>
+			<div className="container">
 				<GreetingSection />
 				<FeaturedSection />
 				<AboutSection />
