@@ -1,5 +1,6 @@
 .section {
 	@include textS();
+	color: $ColorPrimary;
 	margin-bottom: $xxl + 8px;
 
 	@include screen('tablet') {
@@ -13,11 +14,11 @@
 
 .title {
 	@include h2();
-	text-align: center;
 	margin-bottom: $m;
 
 	@include screen('mobile') {
 		@include h3();
+		margin-bottom: $xs;
 	}
 }
 
