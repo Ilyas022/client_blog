@@ -1,7 +1,7 @@
 .section {
 	position: relative;
 	@include textS();
-	margin-bottom: $xxl + 8px;
+	margin-bottom: $xl - 4px;
 
 	@include screen('tablet') {
 		margin-bottom: $m;
@@ -108,63 +108,6 @@
 
 		&:hover {
 			color: $ColorButton;
-		}
-	}
-}
-
-.weAre {
-	display: flex;
-	align-items: center;
-	gap: $l + 6px;
-
-	@include screen('small-desktop') {
-		flex-direction: column;
-		gap: $m + 2px;
-	}
-
-	@include screen('non-desktop') {
-		flex-direction: column;
-		gap: $m + 2px;
-	}
-}
-
-.presentation {
-	color: $ColorTextLight;
-
-	@include screen('small-desktop') {
-		text-align: center;
-	}
-
-	@include screen('non-desktop') {
-		text-align: center;
-	}
-
-	& > :last-child {
-		@include h4();
-	}
-}
-
-.companies {
-	display: flex;
-	gap: $l - 7px;
-	color: $ColorTextLight;
-
-	@include screen('non-desktop') {
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: $s + 8px;
-		row-gap: $xs + 4px;
-	}
-
-	@include screen('mobile') {
-		column-gap: $s - 2px;
-	}
-
-	& > * {
-		transition: color 0.3s;
-
-		&:hover {
-			color: $ColorPrimary;
 		}
 	}
 }

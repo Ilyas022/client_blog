@@ -1,0 +1,133 @@
+.section {
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.container {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: $l;
+
+	@include screen('small-desktop') {
+		gap: $m - 8px;
+	}
+
+	@include screen('tablet') {
+		gap: $xs + 4px;
+	}
+
+	@include screen('mobile') {
+		flex-direction: column;
+		gap: $xs + 4px;
+	}
+
+	&:first-child {
+		margin-bottom: $xxl + 8px;
+
+		@include screen('tablet') {
+			margin-bottom: $m + 12px;
+		}
+
+		@include screen('mobile') {
+			flex-direction: column-reverse;
+			margin-bottom: $s + 8px;
+		}
+	}
+}
+
+.item {
+	width: 41%;
+
+	@include screen('non-desktop') {
+		width: auto;
+	}
+}
+
+.title {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('tablet') {
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		@include h4();
+		margin-bottom: $xxs;
+	}
+}
+
+.desc {
+	@include h4();
+	margin-bottom: $xs;
+
+	@include screen('tablet') {
+		@include h5();
+	}
+
+	@include screen('mobile') {
+		@include textXs();
+		margin-bottom: $xxs;
+	}
+}
+
+.text {
+	@include textS();
+
+	@include screen('non-desktop') {
+		@include textXs();
+	}
+}
+
+.img {
+	max-width: $xl5 - 19px;
+	max-height: $xl3 + 80px;
+	width: 48%;
+	object-fit: cover;
+
+	@include screen('tablet') {
+		max-height: $xl2;
+	}
+
+	@include screen('mobile') {
+		max-height: $xl1 + 50px;
+		width: 100%;
+	}
+}
+
+.circle {
+	position: absolute;
+	bottom: -8%;
+	left: $xl;
+	height: $l - 6px;
+	width: $l - 6px;
+	border-radius: 50%;
+	background-color: $ColorUser;
+
+	@include screen('non-desktop') {
+		display: none;
+	}
+}
+
+.rect {
+	position: absolute;
+	top: 23%;
+	right: 45%;
+	width: $xl + 3px;
+	height: $xl + 16px;
+	border-top-left-radius: $xs + 4px;
+	background-color: $ColorButton;
+
+	@include screen('non-desktop') {
+		display: none;
+	}
+}
