@@ -1,4 +1,5 @@
 import AuthorsSection from '@/components/AuthorsSection'
+import JoinSection from '@/components/JoinSection'
 
 import AboutUsSection from './components/AboutUsSection'
 import ReasonsSection from './components/ReasonsSection'
@@ -11,6 +12,7 @@ function About() {
 				<AboutUsSection />
 				<ReasonsSection />
 				<AuthorsSection authors={authors} />
+				<JoinSection />
 			</div>
 		</main>
 	)
