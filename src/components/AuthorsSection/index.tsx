@@ -1,9 +1,17 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 import css from './AuthorsSection.module.scss'
-import { authors, companies, socialNetworks } from './config'
+import { socialNetworks } from './config'
 
-function AuthorsSection() {
+interface AuthorsSectionProps {
+	authors: {
+		fullName: string
+		job: string
+		icon: StaticImageData
+	}[]
+}
+
+function AuthorsSection({ authors }: AuthorsSectionProps) {
 	return (
 		<section className={css.section}>
 			<h2 className={css.title}>List of Authors</h2>
@@ -16,13 +24,6 @@ function AuthorsSection() {
 						<div className={css.icons}>{socialNetworks}</div>
 					</div>
 				))}
-			</div>
-			<div className={css.weAre}>
-				<div className={css.presentation}>
-					<p>We are</p>
-					<p>Featured in</p>
-				</div>
-				<div className={css.companies}>{companies}</div>
 			</div>
 		</section>
 	)

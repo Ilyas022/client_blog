@@ -1,10 +1,12 @@
 import AboutSection from './components/AboutSection'
-import AuthorsSection from './components/AuthorsSection'
 import CategorySection from './components/CategorySection'
 import FeaturedSection from './components/FeaturedSection'
 import GreetingSection from './components/GreetingSection'
 import ReasonSection from './components/ReasonSection'
 import TestimonialsSection from './components/TestimonialsSection'
+import WeAreSection from './components/WeAreSection'
+import { authors } from './config'
+import AuthorsSection from '../components/AuthorsSection'
 import JoinSection from '../components/JoinSection'
 
 export default function Home() {
@@ -16,7 +18,8 @@ export default function Home() {
 				<AboutSection />
 				<CategorySection />
 				<ReasonSection />
-				<AuthorsSection />
+				<AuthorsSection authors={authors} />
+				<WeAreSection />
 				<TestimonialsSection />
 				<JoinSection />
 			</div>
