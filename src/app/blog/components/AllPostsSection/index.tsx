@@ -1,10 +1,13 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
+import { mockPosts } from '@/constants/mockPosts'
+import { POST_PAGE_ROUTE } from '@/constants/routes'
+
 import css from './AllPostsSection.module.scss'
-import { postsData } from './config'
 
 function AllPostsSection() {
 	const [currentPage, setCurrentPage] = useState(0)
@@ -13,7 +16,7 @@ function AllPostsSection() {
 	const isPageChanged = useRef(false)
 
 	const nextPage = () => {
-		if ((currentPage + 1) * postsPerPage < postsData.length) {
+		if ((currentPage + 1) * postsPerPage < mockPosts.length) {
 			if (!isPageChanged.current) isPageChanged.current = true
 			setCurrentPage(currentPage + 1)
 		}
@@ -33,16 +36,16 @@ function AllPostsSection() {
 
 	const posts = useMemo(() => {
 		const startIndex = currentPage * postsPerPage
-		const slicedPosts = postsData.slice(startIndex, startIndex + postsPerPage)
-		return slicedPosts.map(({ category, image, text, title, id }) => (
-			<div className={css.post} key={id}>
-				<Image alt="" src={image} className={css.postImg} />
+		const slicedPosts = mockPosts.slice(startIndex, startIndex + postsPerPage)
+		return slicedPosts.map(({ category, img, text, title, id }) => (
+			<Link href={`${POST_PAGE_ROUTE}/${id}`} className={css.post} key={id}>
+				<Image alt="" src={img} className={css.postImg} />
 				<div>
-					<p className={css.postCategory}>{category}</p>
+					<p className={css.postCategory}>{category.name}</p>
 					<p className={css.postTitle}>{title}</p>
 					<p className={css.postText}>{text}</p>
 				</div>
-			</div>
+			</Link>
 		))
 	}, [currentPage])
 
@@ -63,7 +66,7 @@ function AllPostsSection() {
 					className={css.controlBtn}
 					type="button"
 					onClick={nextPage}
-					disabled={(currentPage + 1) * postsPerPage >= postsData.length}
+					disabled={(currentPage + 1) * postsPerPage >= mockPosts.length}
 				>
 					Next &gt;
 				</button>

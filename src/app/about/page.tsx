@@ -1,9 +1,9 @@
 import AuthorsSection from '@/components/AuthorsSection'
 import JoinSection from '@/components/JoinSection'
+import { mockAuthors } from '@/constants/mockAuthors'
 
 import AboutUsSection from './components/AboutUsSection'
 import ReasonsSection from './components/ReasonsSection'
-import { authors } from './config'
 
 function About() {
 	return (
@@ -11,7 +11,7 @@ function About() {
 			<div className="container">
 				<AboutUsSection />
 				<ReasonsSection />
-				<AuthorsSection authors={authors} />
+				<AuthorsSection authors={mockAuthors} />
 				<JoinSection />
 			</div>
 		</main>

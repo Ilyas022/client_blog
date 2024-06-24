@@ -10,7 +10,11 @@ import ArrowPrevIcon from '@/assets/icons/ArrowPrevIcon'
 import css from './Carousel.module.scss'
 
 interface CarouselProps {
-	data: { title: string; user: { icon: StaticImageData; location: string; name: string } }[]
+	data: {
+		id: string
+		title: string
+		author: { icon: StaticImageData; location: string; fullName: string }
+	}[]
 }
 
 function Carousel({ data }: CarouselProps) {
@@ -39,14 +43,14 @@ function Carousel({ data }: CarouselProps) {
 					}}
 					className={css.div}
 				>
-					{data.map(({ title, user }, i) => (
-						<div key={i} className={css.item}>
+					{data.map(({ id, title, author }) => (
+						<div key={id} className={css.item}>
 							<p className={css.title}>{title}</p>
 							<div className={css.user}>
-								<Image className={css.userIcon} alt="user icon" src={user.icon} />
+								<Image className={css.userIcon} alt="user icon" src={author.icon} />
 								<div>
-									<p>{user.name}</p>
-									<p>{user.location}</p>
+									<p>{author.fullName}</p>
+									<p>{author.location}</p>
 								</div>
 							</div>
 						</div>

@@ -38,6 +38,11 @@
 	display: flex;
 	gap: $s;
 	align-items: center;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $ColorButton;
+	}
 
 	@include screen('mobile') {
 		flex-direction: column;

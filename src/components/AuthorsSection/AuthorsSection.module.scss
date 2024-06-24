@@ -57,6 +57,11 @@
 	align-items: center;
 	padding: $s + 8px;
 	background-color: $ColorAuthorBg;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $ColorButton;
+	}
 
 	@include screen('small-desktop') {
 		flex-basis: 31%;
