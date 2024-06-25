@@ -1,5 +1,6 @@
 import FormSection from './components/FormSection'
 import InfoSection from './components/InfoSection'
+import MapSection from './components/MapSection'
 import css from './ContactsPage.module.scss'
 
 function Contacts() {
@@ -9,6 +10,7 @@ function Contacts() {
 				<InfoSection />
 				<FormSection />
 			</div>
+			<MapSection />
 		</main>
 	)
 }
