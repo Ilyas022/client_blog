@@ -1,0 +1,105 @@
+.container {
+	padding-top: $xxl + 8px;
+	@include textS();
+	margin-bottom: $m + 15px;
+
+	@include screen('tablet') {
+		padding-top: $m + 12px;
+	}
+
+	@include screen('mobile') {
+		padding-top: $m - 8px;
+		margin-bottom: $s - 2px;
+	}
+}
+
+.header {
+	text-align: center;
+	margin-bottom: $l - 16px;
+
+	@include screen('tablet') {
+		margin-bottom: $s - 2px;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xs + 4px;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	letter-spacing: 0.19em;
+	font-weight: 900;
+	text-align: center;
+	margin-bottom: $xs - 4px;
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+	}
+}
+
+.desc {
+	@include h1();
+	margin-bottom: $xs + 8px;
+
+	@include screen('tablet') {
+		@include h2();
+	}
+
+	@include screen('mobile') {
+		@include h3();
+		margin-bottom: $xxs;
+	}
+}
+
+.text {
+	@include screen('mobile') {
+		@include textXs();
+	}
+}
+
+.info {
+	display: flex;
+	gap: $m - 6px;
+	color: $ColorWhite;
+	padding: $m $l - 16px;
+	background-color: $ColorUser;
+
+	@include screen('mobile') {
+		padding: $xs + 4px;
+		flex-direction: column;
+		text-align: center;
+		gap: $s - 2px;
+	}
+}
+
+.col {
+	flex: 1 1;
+}
+
+.colTitle {
+	@include textXs();
+	opacity: 0.6;
+	margin-bottom: $xs;
+}
+
+.separator {
+	display: block;
+	height: $xxs - 7px;
+	width: 100%;
+	background-color: $ColorWhite;
+	opacity: 0.1;
+	margin-bottom: $xs;
+}
+
+.colInfo {
+	@include h5();
+
+	@include screen('mobile') {
+		@include textMBold();
+	}
+}
+
+.colText {
+	opacity: 0.6;
+}
