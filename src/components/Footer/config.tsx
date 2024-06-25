@@ -50,7 +50,7 @@ export const socialNetworks = [
 export const onSubmit = (email: string) => {
 	emailjs.send(
 		process.env.NEXT_PUBLIC_SERVICE_ID,
-		process.env.NEXT_PUBLIC_TEMPLATE_ID,
+		process.env.NEXT_PUBLIC_TEMPLATE_SUBSCRIPTION_ID,
 		{
 			from_name: 'Customer',
 			to_name: 'Ilya',
