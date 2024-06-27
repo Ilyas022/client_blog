@@ -3,6 +3,7 @@
 import cn from 'classnames'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { links } from './config'
 import css from './Navbar.module.scss'
@@ -10,6 +11,9 @@ import { NavbarProps } from './types'
 
 function Navbar({ handleOpen }: NavbarProps) {
 	const currentPath = usePathname()
+	const locale = useLocale()
+	const t = useTranslations('Navbar')
+
 	const isActive = (path: string) => currentPath === path
 
 	const handleClick = () => {
@@ -23,14 +27,14 @@ function Navbar({ handleOpen }: NavbarProps) {
 				<Link
 					onClick={handleClick}
 					key={title}
-					href={path}
+					href={`/${locale}${path}`}
 					className={cn(css.link, isActive(path) && css.activeLink)}
 				>
-					{title}
+					{t(title)}
 				</Link>
 			))}
 			<button className={css.videoBtn} type="button">
-				Video about us
+				{t('btn')}
 			</button>
 		</nav>
 	)

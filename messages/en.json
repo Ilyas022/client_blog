@@ -1,0 +1,205 @@
+{
+  "Greeting": {
+    "intro": "POSTED ON",
+    "category": "startup", 
+    "title": "Step-by-step guide to choosing great font pairs",
+    "by": "By",
+    "date": "May 23, 2022",
+    "desc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    "btn": "Read more"
+  },
+  "Featured": {
+    "sectionTitle": "Featured post",
+    "all": "All Posts",
+    "showAll": "View all",
+    "postTitle": "8 Figma design systems that you can download for free today.",
+    "postDate": "Aug 23, 2021",
+    "by": "By",
+    "date": "May 23, 2022",
+    "featuredTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    "featureDesc": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    "btn": "Read more"
+  },
+  "About": {
+    "aboutTitle": "ABOUT US",
+    "aboutDesc": "We are a community of content writers who share their learnings","aboutText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "missionTitle": "Our mission",
+    "missionDesc": "Creating valuable content for creatives all around the world","missionText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "visionTitle": "Our Vision",
+    "visionDesc": "A platform that empowers individuals to improve",
+    "visisonText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "stats": {
+      "blogsNumber": "Blogs Published",
+      "viewsNumber": "Views on Finsweet",
+      "usersNumber": "Total active Users"
+    },
+    "btn": "Read more"
+  },
+  "Category": {
+    "title": "Choose A Catagory",
+     "headerTitle": "Business",
+    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    "headerPath": "Blog > Business"
+  },
+  "Categories": {
+    "input": "Search for post",
+    "btn": "Search",
+    "title": "Categories",
+    "tagTitle": "All Tags",
+    "BusinessTitle": "Business",
+    "StartupTitle": "Startup",
+    "EconomyTitle": "Economy",
+    "TechnologyTitle": "Technology",
+    "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "ExperienceTitle": "Experience",
+    "ScreenTitle": "Screen",
+    "MarketingTitle": "Marketing",
+    "LifeTitle": "Life"
+  },
+  "Reasons": {
+    "title": "WHY WE STARTED",
+    "desc": "It started out as a simple idea and evolved into our passion",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+    "btn": "Discover our story"
+  },
+  "Authors": {
+    "title": "List of Authors",
+    "job": "Content Writer @Company",
+    "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.",
+    "location": "New york, USA",
+    "floyd": {
+      "fullName": "Floyd Miles" ,
+      "intro" : "Hey there, I`m Floyd Miles and welcome to my Blog"
+    },
+    "dianne": {
+      "fullName": "Dianne Russell" ,
+      "intro" : "Hey there, I`m Dianne Russell and welcome to my Blog"
+    },
+    "jenny": {
+      "fullName": "Jenny Wilson" ,
+      "intro" : "Hey there, I`m Jenny Wilson and welcome to my Blog"
+    },
+    "leslie": {
+      "fullName": "Leslie Alexander" ,
+      "intro" : "Hey there, I`m Leslie Alexander and welcome to my Blog"
+    },
+    "guy": {
+      "fullName": "Guy Hawkins" ,
+      "intro" : "Hey there, I`m Guy Hawkins and welcome to my Blog"
+    },
+    "eleanor": {
+      "fullName": "Eleanor Pena" ,
+      "intro" : "Hey there, I`m Eleanor Pena and welcome to my Blog"
+    },
+    "robert": {
+      "fullName": "Robert Fox" ,
+      "intro" : "Hey there, I`m Robert Fox and welcome to my Blog"
+    },
+    "jacob": {
+      "fullName": "Jacob Jones" ,
+      "intro" : "Hey there, I`m Jacob Jones and welcome to my Blog"
+    },
+    "andrew": {
+      "fullName": "Andrew Jonhson" ,
+      "intro" : "Hey there, I`m Andrew Jonhson and welcome to my Blog"
+    }
+  },
+  "WeAre": {
+    "title": "We are",
+    "subTitle": "Featured in"
+  },
+  "Testimonials": {
+    "title": "TESTIMONIALs",
+    "desc": "What people say about our blog",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    "testimonialTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "Join": {
+    "title": "Join our team to be a part of our story",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    "btn": "Join Now"
+  },
+  "Navbar": {
+    "home": "Home",
+    "blog": "Blog",
+    "about": "About Us",
+    "contacts": "Contact us",
+    "privacy": "Privacy Policy",
+    "btn": "Video about us"
+  },
+  "Footer": {
+    "title": "Subscribe to our news letter to get latest updates and news",
+    "input": "Enter Your Email",
+    "btn": "Subscribe",
+    "street": "Finstreet",
+    "town": "Fintown"
+  },
+  "Posts": {
+    "myPostsTitle": "My posts",
+    "noPosts": "Author doesn`t have any posts.",
+    "title": "All posts",
+    "categoriesTitle": "All Categories",
+    "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+    "date": "Posted on 27th January 2022",
+    "0": {
+      "title": "Design tips for designers that cover everything you need"
+    },
+    "1": {
+      "title": "How to build rapport with your web design clients"
+    },
+    "2": {
+      "title": "Logo design trends to avoid in 2022"
+    },
+    "3": {
+      "title": "8 Figma design systems you can download for free today"
+    },
+    "4": {
+      "title": "Font sizes in UI design: The complete guide to follow"
+    },
+    "5": {
+      "title": "Font sizes in UI design: The complete guide to follow"
+    },
+    "6": {
+      "title": "How to build rapport with your web design clients"
+    }
+  },
+  "ControlBtns": {
+    "next": "Next",
+    "prev": "Prev"
+  },
+  "Suggestion": {
+    "title": "What to read next",
+    "by": "By"
+  },
+  "CreativesReasons": {
+    "creativesTitle": "Our team of creatives",
+    "reasonsTitle": "Why we started this Blog",
+    "creativesDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+    "creativesText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
+  },
+  "Privacy": {
+    "headerTitle": "Privacy Policy",
+    "update": "Last Updated  on 27th January 2022",
+    "title": "Lorem ipsum dolor sit amet",
+    "subTitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus. Sociis natoque penatibus et magnis dis parturient montes. Ridiculus mus mauris vitae ultricies leo. Neque egestas congue quisque egestas diam. Risus in hendrerit gravida rutrum quisque non. Sit amet nulla facilisi morbi tempus iaculis urna. Lorem sed risus ultricies tristique nulla aliquet enim. Volutpat blandit aliquam etiam erat velit. Orci eu lobortis elementum nibh. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Neque convallis a cras semper auctor neque vitae tempus quam.",
+    "subText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus. Sociis natoque penatibus et magnis dis parturient montes. Ridiculus mus mauris vitae ultricies leo. Neque egestas congue quisque egestas diam. Risus in hendrerit gravida rutrum quisque non. Sit amet nulla facilisi morbi tempus iaculis urna. Lorem sed risus ultricies tristique nulla aliquet enim. Volutpat blandit aliquam etiam erat velit. Orci eu lobortis elementum nibh. Ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla. Neque convallis a cras semper auctor neque vitae tempus quam."
+  },
+  "Contacts": {
+    "title": "Contact us",
+    "desc": "Let’s Start a Conversation",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.",
+    "hoursSubTitle": "Working hours",
+    "contactSubTitle": "Contact Us",
+    "weekSchedule": "Monday To Friday",
+    "hoursSchedule": "9:00 AM to 8:00 PM ",
+    "support": "Our Support Team is available 24/7"
+  },
+  "ContactForm": {
+    "fullName": "Full Name",
+    "email": "Your Email",
+    "query": "Query Related  ",
+    "message": "Message",
+    "btn": "Send Message"
+  }
+}

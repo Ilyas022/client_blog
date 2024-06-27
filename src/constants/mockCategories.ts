@@ -4,8 +4,8 @@ import startUpIcon from '@/assets/icons/startUpIcon.svg'
 import technologyIcon from '@/assets/icons/technologyIcon.svg'
 
 export const mockCategories = [
-	{ id: '0', name: 'Startup', img: startUpIcon },
-	{ id: '1', name: 'Business', img: businessIcon },
-	{ id: '2', name: 'Technology', img: technologyIcon },
-	{ id: '3', name: 'Economy', img: economyIcon },
+	{ id: '0', name: 'StartupTitle', img: startUpIcon },
+	{ id: '1', name: 'BusinessTitle', img: businessIcon },
+	{ id: '2', name: 'TechnologyTitle', img: technologyIcon },
+	{ id: '3', name: 'EconomyTitle', img: economyIcon },
 ]

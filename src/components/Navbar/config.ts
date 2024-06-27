@@ -7,19 +7,19 @@ import {
 
 export const links = [
 	{
-		title: 'Home',
+		title: 'home',
 		path: HOME_PAGE_ROUTE,
 	},
 	{
-		title: 'Blog',
+		title: 'blog',
 		path: BLOG_PAGE_ROUTE,
 	},
 	{
-		title: 'About Us',
+		title: 'about',
 		path: ABOUT_PAGE_ROUTE,
 	},
 	{
-		title: 'Contact us',
+		title: 'contacts',
 		path: CONTACTS_PAGE_ROUTE,
 	},
 ]

@@ -31,6 +31,7 @@
 	}
 
 	&Title {
+		@include h3();
 		margin-bottom: $xxs - 4px;
 	}
 }
@@ -41,4 +42,8 @@
 	height: $m;
 	background-color: $ColorPostHover;
 	margin-bottom: $xs;
+}
+
+.text {
+	color: $ColorTextLight;
 }

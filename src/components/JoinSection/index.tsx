@@ -1,19 +1,21 @@
+'use client'
+
 import cn from 'classnames'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { CONTACTS_PAGE_ROUTE } from '@/constants/routes'
 
 import css from './JoinSection.module.scss'
 
 function JoinSection() {
+	const t = useTranslations('Join')
 	return (
 		<section className={css.section}>
-			<h2 className={css.title}>Join our team to be a part of our story</h2>
-			<p className={css.text}>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-			</p>
+			<h2 className={css.title}>{t('title')}</h2>
+			<p className={css.text}>{t('text')}</p>
 			<Link href={CONTACTS_PAGE_ROUTE} type="button" className={cn(css.btn, '_btn')}>
-				Join Now
+				{t('btn')}
 			</Link>
 		</section>
 	)

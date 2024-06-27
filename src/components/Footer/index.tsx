@@ -4,6 +4,7 @@ import cn from 'classnames'
 import { useFormik } from 'formik'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
 
 import Logo from '@/components/Logo'
 
@@ -11,6 +12,9 @@ import { links, onSubmit, socialNetworks, validationSchema } from './config'
 import css from './Footer.module.scss'
 
 function Footer() {
+	const locale = useLocale()
+	const tNav = useTranslations('Navbar')
+	const tFooter = useTranslations('Footer')
 	const formik = useFormik({
 		initialValues: {
 			email: '',
@@ -32,23 +36,23 @@ function Footer() {
 						{links.map(({ path, title }) => (
 							<Link
 								key={title}
-								href={path}
+								href={`/${locale}${path}`}
 								className={cn(css.link, isActive(path) && css.activeLink)}
 							>
-								{title}
+								{tNav(title)}
 							</Link>
 						))}
 					</div>
 				</div>
 				<form className={css.form} onSubmit={formik.handleSubmit}>
-					<p className={css.title}>Subscribe to our news letter to get latest updates and news</p>
+					<p className={css.title}>{tFooter('title')}</p>
 					<div className={css.formContainer}>
 						<input
 							className={cn(
 								css.input,
 								formik.touched.email && formik.errors.email && css.inputInvalid
 							)}
-							placeholder="Enter Your Email"
+							placeholder={tFooter('input')}
 							type="text"
 							{...formik.getFieldProps('email')}
 						/>
@@ -57,13 +61,15 @@ function Footer() {
 							disabled={!!(formik.touched.email && formik.errors.email)}
 							type="submit"
 						>
-							Subscribe
+							{tFooter('btn')}
 						</button>
 					</div>
 				</form>
 				<div className={css.info}>
 					<div className={css.text}>
-						<p>Finstreet 118 2561 Fintown</p>
+						<p>
+							{tFooter('street')} 118 2561 {tFooter('town')}
+						</p>
 						<p>Hello@finsweet.com 020 7993 2905</p>
 					</div>
 					<div className={css.socialNetworks}>{socialNetworks}</div>
