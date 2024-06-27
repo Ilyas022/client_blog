@@ -1,0 +1,13 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	max-width: $xl2 - 4px;
+
+	@include screen('non-desktop') {
+		max-width: none;
+	}
+
+	&:first-child {
+		margin-bottom: $m + 10px;
+	}
+}
