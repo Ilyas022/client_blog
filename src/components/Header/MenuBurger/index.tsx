@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { useEffect } from 'react'
 
-import Navbar from '@/components/Navbar'
+import NavbarMobile from '@/components/NavbarMobile'
 import { useScrollLock } from '@/hooks/useScrollLock'
 
 import css from './MenuBurger.module.scss'
@@ -24,7 +24,7 @@ function MenuBurger({ handleOpen, isOpened }: IMenuBurger) {
 
 	return (
 		<div className={cn(css.menu, isOpened && css.menuOpened)}>
-			<Navbar handleOpen={handleOpen} />
+			<NavbarMobile handleOpen={handleOpen} />
 		</div>
 	)
 }

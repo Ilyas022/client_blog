@@ -1,7 +1,11 @@
 .burgerBtn {
-	display: block;
 	position: relative;
 	z-index: 10;
+	display: none;
+
+	@include screen('mobile') {
+		display: block;
+	}
 }
 
 .input {
