@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	gap: $xxl + 27px;
+	margin-bottom: $xxl + 8px;
+
+	@include screen('small-desktop') {
+		gap: $m + 12px;
+	}
+
+	@include screen('non-desktop') {
+		flex-direction: column-reverse;
+		gap: $s - 2px;
+	}
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}

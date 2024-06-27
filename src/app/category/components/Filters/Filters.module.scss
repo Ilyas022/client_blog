@@ -1,0 +1,143 @@
+.filters {
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+	@include h2();
+	margin-bottom: $m - 8px;
+
+	@include screen('tablet') {
+		@include h3();
+		margin-bottom: $xs;
+	}
+
+	@include screen('mobile') {
+		@include h4();
+		margin-bottom: $xs;
+	}
+}
+
+.categories {
+	display: flex;
+	flex-direction: column;
+	gap: $xs + 8px;
+	margin-bottom: $m;
+
+	@include screen('non-desktop') {
+		flex-direction: row;
+		max-width: 100%;
+		overflow: auto;
+		margin-bottom: $xs;
+	}
+
+	@include screen('non-desktop') {
+		gap: $xs;
+	}
+}
+
+.category {
+	display: flex;
+	align-items: center;
+	gap: $xs;
+	padding: $xs + 8px;
+	transition: background-color 0.3s;
+	border: $xxs - 6.5px solid $ColorCategoryBorder;
+	cursor: pointer;
+
+	@include screen('non-desktop') {
+		padding: $xs - 6px $xs - 1px;
+		border-radius: $xxs;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			border-color: transparent;
+			background-color: $ColorButtonHover;
+		}
+	}
+
+	&Active {
+		background-color: $ColorButton;
+	}
+}
+
+.categoryName {
+	@include h3();
+
+	@include screen('tablet') {
+		@include h4();
+	}
+
+	@include screen('mobile') {
+		@include textXs();
+	}
+}
+
+.img {
+	width: 100%;
+	height: 100%;
+}
+
+.imgContainer {
+	height: $m;
+	width: $m;
+	border-radius: $xxs;
+	background-color: $ColorPostHover;
+
+	@include screen('non-desktop') {
+		display: none;
+	}
+}
+
+.tagsTitle {
+	@include h2();
+	margin-bottom: $xs + 8px;
+
+	@include screen('tablet') {
+		@include h3();
+		margin-bottom: $xs;
+	}
+
+	@include screen('mobile') {
+		@include h4();
+		margin-bottom: $xs;
+	}
+}
+
+.tags {
+	display: flex;
+	gap: $xs;
+	flex-wrap: wrap;
+	width: 100%;
+
+	@include screen('non-desktop') {
+		flex-wrap: nowrap;
+		margin-bottom: $xs;
+		max-width: 100%;
+		width: auto;
+		overflow: auto;
+	}
+}
+
+.tag {
+	text-align: center;
+	flex: 1 1;
+	max-width: fit-content;
+	@include textXs();
+	padding: $xxs $xs - 1px;
+	border: $xxs - 6px solid $ColorTextLight;
+	border-radius: $s - 4px;
+	transition: background-color 0.3s;
+
+	@media (hover: hover) {
+		&:hover {
+			border-color: transparent;
+			background-color: $ColorButtonHover;
+		}
+	}
+
+	&Active {
+		background-color: $ColorButton;
+	}
+}

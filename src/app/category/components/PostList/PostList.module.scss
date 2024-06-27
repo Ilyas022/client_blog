@@ -1,0 +1,82 @@
+.post {
+	display: flex;
+	gap: $s;
+	align-items: center;
+	@include textS();
+
+	@include screen('mobile') {
+		gap: $xs;
+	}
+
+	@include screen('(max-width: 550px)') {
+		flex-direction: column;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: $m + 16px;
+
+		@include screen('mobile') {
+			margin-bottom: $s;
+		}
+	}
+}
+
+.postImg {
+	width: $xl2 - 6px;
+	height: $xl2 + 12px;
+	object-fit: cover;
+
+	@include screen('tablet') {
+		height: $xl1 + 50px;
+	}
+
+	@include screen('mobile') {
+		width: 40%;
+		max-height: $xl1;
+	}
+
+	@include screen('(max-width: 550px)') {
+		width: 100%;
+	}
+}
+
+.postInfo {
+	max-width: $xl4 - 30px;
+
+	@include screen('non-desktop') {
+		max-width: none;
+	}
+}
+
+.postTitle {
+	text-transform: uppercase;
+	margin-bottom: $xs + 4px;
+
+	@include screen('tablet') {
+		margin-bottom: $xxs;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+	}
+}
+
+.postDesc {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('tablet') {
+		margin-bottom: $xxs;
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+		@include h4();
+	}
+}
+
+.postText {
+	@include textS();
+	color: $ColorTextLight;
+}

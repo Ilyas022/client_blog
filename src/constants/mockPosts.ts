@@ -17,6 +17,7 @@ export const mockPosts = [
 		title: 'Design tips for designers that cover everything you need',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
 		date: 'Posted on 27th January 2022',
+		tags: ['0', '1'],
 	},
 	{
 		id: '1',
@@ -29,6 +30,7 @@ export const mockPosts = [
 		title: 'How to build rapport with your web design clients',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
 		date: 'Posted on 27th January 2022',
+		tags: ['1', '2'],
 	},
 	{
 		id: '2',
@@ -41,6 +43,7 @@ export const mockPosts = [
 		title: 'Logo design trends to avoid in 2022',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
 		date: 'Posted on 27th January 2022',
+		tags: ['2', '3'],
 	},
 	{
 		id: '3',
@@ -53,6 +56,7 @@ export const mockPosts = [
 		title: '8 Figma design systems you can download for free today',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
 		date: 'Posted on 27th January 2022',
+		tags: ['3', '4'],
 	},
 	{
 		id: '4',
@@ -65,6 +69,7 @@ export const mockPosts = [
 		title: 'Font sizes in UI design: The complete guide to follow',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
 		date: 'Posted on 27th January 2022',
+		tags: ['4', '5'],
 	},
 	{
 		id: '5',
@@ -77,6 +82,7 @@ export const mockPosts = [
 		title: 'Font sizes in UI design: The complete guide to follow',
 		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
 		date: 'Posted on 27th January 2022',
+		tags: ['5', '0'],
 	},
 	{
 		id: '6',
@@ -89,5 +95,6 @@ export const mockPosts = [
 		title: 'How to build rapport with your web design clients',
 		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		date: 'Posted on 27th January 2022',
+		tags: ['1', '3'],
 	},
 ]

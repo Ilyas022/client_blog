@@ -1,0 +1,41 @@
+.header {
+	background-color: $ColorPurpleLight;
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.container {
+	max-width: $xl3 + 120px;
+	margin: 0 auto;
+	text-align: center;
+	padding: $l $xs - 1px;
+	@include textS();
+
+	@include screen('mobile') {
+		padding: $s - 2px $xs - 1px;
+	}
+}
+
+.title {
+	@include title();
+	margin-bottom: $xs;
+
+	@include screen('mobile') {
+		@include h2();
+	}
+}
+
+.text {
+	margin-bottom: $s;
+}
+
+.desc {
+	text-transform: uppercase;
+}
