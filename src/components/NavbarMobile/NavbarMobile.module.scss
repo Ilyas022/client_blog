@@ -3,12 +3,9 @@
 	align-items: center;
 	gap: $s;
 
-	@include screen('tablet') {
-		gap: $xs;
-	}
-
 	@include screen('mobile') {
-		display: none;
+		display: flex;
+		flex-direction: column;
 	}
 }
 
