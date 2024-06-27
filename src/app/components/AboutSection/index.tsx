@@ -1,12 +1,17 @@
+'use client'
+
+import cn from 'classnames'
 import Link from 'next/link'
+import { useInViewRef } from 'rooks'
 
 import { ABOUT_PAGE_ROUTE } from '@/constants/routes'
 
 import css from './AboutSection.module.scss'
 
 function AboutSection() {
+	const [ref, inView] = useInViewRef()
 	return (
-		<section className={css.section}>
+		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
 			<div className={css.header}>
 				<span className={css.yellowItem} />
 				<span className={css.purpleItem} />

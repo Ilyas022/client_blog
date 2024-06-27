@@ -1,4 +1,8 @@
+'use client'
+
+import cn from 'classnames'
 import { useMemo } from 'react'
+import { useInViewRef } from 'rooks'
 
 import { Author } from '@/types/interfaces'
 import { getAuthor } from '@/utils/getAuthor'
@@ -8,6 +12,7 @@ import css from './TestimonialsSection.module.scss'
 import Carousel from '../Carousel'
 
 function TestimonialsSection() {
+	const [ref, inView] = useInViewRef()
 	const testimonials = useMemo(() => {
 		return getTestimonials().map((testimonial) => {
 			const author = getAuthor(testimonial.author)
@@ -17,7 +22,7 @@ function TestimonialsSection() {
 	}, [])
 
 	return (
-		<section className={css.section}>
+		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
 			<div>
 				<p className={css.title}>TESTIMONIALS</p>
 				<p className={css.description}>What people say about our blog</p>

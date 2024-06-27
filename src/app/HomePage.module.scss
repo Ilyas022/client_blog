@@ -1,0 +1,8 @@
+.section {
+	opacity: 0;
+	transition: opacity 2s;
+
+	&Visible {
+		opacity: 1;
+	}
+}

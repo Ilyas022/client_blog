@@ -5,6 +5,12 @@
 	@include textS();
 	margin-bottom: $xxl + 8px;
 	background-color: $ColorPostHover;
+	opacity: 0;
+	transition: opacity 2s;
+
+	&Visible {
+		opacity: 1;
+	}
 
 	@include screen('small-desktop') {
 		padding: $l - 10px;

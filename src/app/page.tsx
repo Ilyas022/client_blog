@@ -1,3 +1,8 @@
+'use client'
+
+import cn from 'classnames'
+import { useInViewRef } from 'rooks'
+
 import { mockAuthors } from '@/constants/mockAuthors'
 
 import AboutSection from './components/AboutSection'
@@ -7,10 +12,13 @@ import GreetingSection from './components/GreetingSection'
 import ReasonSection from './components/ReasonSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import WeAreSection from './components/WeAreSection'
+import css from './HomePage.module.scss'
 import AuthorsSection from '../components/AuthorsSection'
 import JoinSection from '../components/JoinSection'
 
 export default function Home() {
+	const [authorsRef, authorsSectionInView] = useInViewRef()
+	const [joinRef, joinSectionInView] = useInViewRef()
 	return (
 		<main>
 			<div className="container">
@@ -19,10 +27,17 @@ export default function Home() {
 				<AboutSection />
 				<CategorySection />
 				<ReasonSection />
-				<AuthorsSection authors={mockAuthors} />
+				<div
+					className={cn(css.section, authorsSectionInView && css.sectionVisible)}
+					ref={authorsRef}
+				>
+					<AuthorsSection authors={mockAuthors} />
+				</div>
 				<WeAreSection />
 				<TestimonialsSection />
-				<JoinSection />
+				<div className={cn(css.section, joinSectionInView && css.sectionVisible)} ref={joinRef}>
+					<JoinSection />
+				</div>
 			</div>
 		</main>
 	)

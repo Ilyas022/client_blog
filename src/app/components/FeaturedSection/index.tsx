@@ -1,6 +1,9 @@
+'use client'
+
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useInViewRef } from 'rooks'
 
 import postimg from '@/assets/postImg.png'
 import { POST_PAGE_ROUTE } from '@/constants/routes'
@@ -9,8 +12,10 @@ import { mockPosts } from './config'
 import css from './FeaturedSection.module.scss'
 
 function FeaturedSection() {
+	const [ref, inView] = useInViewRef()
+
 	return (
-		<section className={css.section}>
+		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
 			<div className={css.postCol}>
 				<h2 className={css.postColTitle}>Featured Post</h2>
 				<div className={css.post}>

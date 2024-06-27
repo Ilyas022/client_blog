@@ -2,6 +2,12 @@
 	position: relative;
 	@include textS();
 	margin-bottom: $xxl + 8px;
+	opacity: 0;
+	transition: opacity 2s;
+
+	&Visible {
+		opacity: 1;
+	}
 
 	@include screen('tablet') {
 		margin-bottom: $m;
