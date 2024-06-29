@@ -35,3 +35,15 @@
 		background-color: $ColorButtonHover;
 	}
 }
+
+.frame {
+	height: $xl3;
+
+	@include screen('tablet') {
+		height: $xl2;
+	}
+
+	@include screen('mobile') {
+		height: $xl1;
+	}
+}
