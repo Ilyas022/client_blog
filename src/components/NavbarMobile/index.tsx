@@ -20,11 +20,7 @@ function NavbarMobile({ handleOpen }: NavbarProps) {
 	const [showVideo, setShowVideo] = useState(false)
 	const isActive = (path: string) => currentPath === path
 
-	const handleClick = () => {
-		if (handleOpen) {
-			handleOpen()
-		}
-	}
+	const handleClick = () => handleOpen?.()
 
 	const handleVideoBtnClick = () => {
 		setShowVideo((prev) => !prev)

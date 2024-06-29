@@ -2,6 +2,7 @@
 
 import cn from 'classnames'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { useInViewRef } from 'rooks'
 
@@ -12,6 +13,9 @@ import css from './AboutSection.module.scss'
 function AboutSection() {
 	const [ref, inView] = useInViewRef()
 	const t = useTranslations('About')
+	const path = usePathname()
+	console.log(path)
+
 	return (
 		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
 			<div className={css.header}>

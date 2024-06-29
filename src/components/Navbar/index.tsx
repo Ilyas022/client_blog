@@ -21,11 +21,7 @@ function Navbar({ handleOpen }: NavbarProps) {
 
 	const isActive = (path: string) => currentPath === path
 
-	const handleLinkClick = () => {
-		if (handleOpen) {
-			handleOpen()
-		}
-	}
+	const handleLinkClick = () => handleOpen?.()
 
 	const handleVideoBtnClick = () => {
 		setShowVideo((prev) => !prev)

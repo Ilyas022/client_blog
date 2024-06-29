@@ -1,6 +1,8 @@
 import emailjs from '@emailjs/browser'
 import * as Yup from 'yup'
 
+import { SubmitProps } from './types'
+
 const validationSchema = Yup.object({
 	fullName: Yup.string().required('Required'),
 	email: Yup.string().email('Invalid email address').required('Required'),
@@ -8,17 +10,7 @@ const validationSchema = Yup.object({
 	message: Yup.string().required('Required'),
 })
 
-export const onSubmit = ({
-	email,
-	fullName,
-	query,
-	message,
-}: {
-	email: string
-	fullName: string
-	query: string
-	message: string
-}) => {
+export const onSubmit = ({ email, fullName, query, message }: SubmitProps) => {
 	emailjs.send(
 		process.env.NEXT_PUBLIC_SERVICE_ID,
 		process.env.NEXT_PUBLIC_TEMPLATE_MESSAGE_ID,

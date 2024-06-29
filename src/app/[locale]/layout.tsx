@@ -5,8 +5,8 @@ import { getMessages } from 'next-intl/server'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-
 import '../globals.scss'
+import { RootLayoutProps } from '@/types/interfaces'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,13 +15,7 @@ export const metadata: Metadata = {
 	description: 'Home page of the blog',
 }
 
-export default async function RootLayout({
-	children,
-	params: { locale },
-}: Readonly<{
-	children: React.ReactNode
-	params: { locale: string }
-}>) {
+export default async function RootLayout({ children, params: { locale } }: RootLayoutProps) {
 	const messages = await getMessages()
 	return (
 		<html lang={locale}>
