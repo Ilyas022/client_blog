@@ -1,11 +1,10 @@
 'use client'
 
 import cn from 'classnames'
+import { Select } from 'client_blog_lib/dist/bundle'
 import { useFormik } from 'formik'
 import { useTranslations } from 'next-intl'
 import { ChangeEvent } from 'react'
-
-import Select from '@/components/Select'
 
 import { formConfig, mockOptions, onSubmit } from './config'
 import css from './FormSection.module.scss'
