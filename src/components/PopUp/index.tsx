@@ -3,12 +3,7 @@ import { useEffect, useRef } from 'react'
 import { useScrollLock } from '@/hooks/useScrollLock'
 
 import css from './PopUp.module.scss'
-
-export interface PopUpProps {
-	children: JSX.Element
-	handleClose: () => void
-	title: string
-}
+import { PopUpProps } from './types'
 
 function PopUp({ children, title, handleClose }: PopUpProps) {
 	const [lockScroll, unlockScroll] = useScrollLock()

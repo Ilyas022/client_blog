@@ -1,7 +1,7 @@
 'use client'
 
 import cn from 'classnames'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useEffect, useRef, useState } from 'react'
 
@@ -9,14 +9,7 @@ import ArrowNextIcon from '@/assets/icons/ArrowNextIcon'
 import ArrowPrevIcon from '@/assets/icons/ArrowPrevIcon'
 
 import css from './Carousel.module.scss'
-
-interface CarouselProps {
-	data: {
-		id: string
-		title: string
-		author: { icon: StaticImageData; location: string; fullName: string }
-	}[]
-}
+import { CarouselProps } from './types'
 
 function Carousel({ data }: CarouselProps) {
 	const [currentImg, setCurrentImg] = useState(0)
