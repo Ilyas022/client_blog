@@ -15,6 +15,7 @@ import PopUp from '../PopUp'
 function Navbar({ handleOpen }: NavbarProps) {
 	const currentPath = usePathname()
 	const locale = useLocale()
+	const pathname = usePathname()
 	const t = useTranslations('Navbar')
 	const [showVideo, setShowVideo] = useState(false)
 
@@ -29,8 +30,12 @@ function Navbar({ handleOpen }: NavbarProps) {
 	const handleVideoBtnClick = () => {
 		setShowVideo((prev) => !prev)
 	}
+
 	return (
 		<nav className={css.navbar}>
+			<Link href={`/${locale === 'ru' ? 'en' : 'ru'}${pathname.substring(3)}`}>
+				{locale.toUpperCase()}
+			</Link>
 			{links.map(({ path, title }) => (
 				<Link
 					onClick={handleLinkClick}

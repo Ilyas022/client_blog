@@ -3,7 +3,7 @@
 import cn from 'classnames'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -15,6 +15,8 @@ import PopUp from '../PopUp'
 function NavbarMobile({ handleOpen }: NavbarProps) {
 	const currentPath = usePathname()
 	const t = useTranslations('Navbar')
+	const locale = useLocale()
+	const pathname = usePathname()
 	const [showVideo, setShowVideo] = useState(false)
 	const isActive = (path: string) => currentPath === path
 
@@ -30,6 +32,12 @@ function NavbarMobile({ handleOpen }: NavbarProps) {
 
 	return (
 		<nav className={css.navbar}>
+			<Link
+				href={`/${locale === 'ru' ? 'en' : 'ru'}${pathname.substring(3)}`}
+				onClick={handleClick}
+			>
+				{locale.toUpperCase()}
+			</Link>
 			{links.map(({ path, title }) => (
 				<Link
 					onClick={handleClick}
