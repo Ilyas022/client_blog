@@ -1,6 +1,5 @@
 'use client'
 
-import cn from 'classnames'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
@@ -14,7 +13,7 @@ function JoinSection() {
 		<section className={css.section}>
 			<h2 className={css.title}>{t('title')}</h2>
 			<p className={css.text}>{t('text')}</p>
-			<Link href={CONTACTS_PAGE_ROUTE} type="button" className={cn(css.btn, '_btn')}>
+			<Link href={CONTACTS_PAGE_ROUTE} type="button" className={css.btn}>
 				{t('btn')}
 			</Link>
 		</section>

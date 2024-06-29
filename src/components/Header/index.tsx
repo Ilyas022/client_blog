@@ -3,7 +3,6 @@
 import { useState } from 'react'
 
 import BurgerButton from '@/components/Header/BurgerBtn'
-import Logo from '@/components/Logo'
 import Navbar from '@/components/Navbar'
 
 import css from './Header.module.scss'
@@ -19,7 +18,7 @@ function Header() {
 	return (
 		<header className={css.header}>
 			<div className={css.container}>
-				<Logo />
+				<p className={css.logo}>Modsen Client Blog</p>
 				<Navbar />
 				<BurgerButton isOpened={popUpOpen} setOpened={handleOpen} />
 				<MenuBurger isOpened={popUpOpen} handleOpen={handleOpen} />

@@ -1,6 +1,5 @@
 'use client'
 
-import cn from 'classnames'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
@@ -49,7 +48,7 @@ function SearchInput() {
 				value={inputValue}
 				onChange={handleSearch}
 			/>
-			<button type="button" className={cn(css.btn, '_btn')}>
+			<button type="button" className={css.btn}>
 				{t('btn')}
 			</button>
 		</div>

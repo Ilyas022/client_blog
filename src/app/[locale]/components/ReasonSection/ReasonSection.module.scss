@@ -88,8 +88,15 @@
 }
 
 .btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
 	padding: $xs $m;
 	background-color: $ColorButton;
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
 
 	@include screen('mobile-small') {
 		width: 100%;

@@ -84,7 +84,7 @@ function FormSection() {
 				{formik.errors.message && <p className={css.error}>{formik.errors.message}</p>}
 			</div>
 			<button
-				className={cn(css.btn, '_btn')}
+				className={css.btn}
 				disabled={!(Object.keys(formik.touched).length === 4 && !Object.keys(formik.errors).length)}
 				type="submit"
 			>

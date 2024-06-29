@@ -17,6 +17,9 @@
 	display: flex;
 	gap: $s 32px;
 	padding: $xxl + 8px $xs - 1px;
+	width: 100%;
+	max-width: $xl7 - 76px;
+	margin: 0 auto;
 
 	@include screen('tablet') {
 		padding: $l - 10px $xs - 1px;

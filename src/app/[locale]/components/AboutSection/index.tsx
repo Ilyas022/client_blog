@@ -12,6 +12,7 @@ import css from './AboutSection.module.scss'
 function AboutSection() {
 	const [ref, inView] = useInViewRef()
 	const t = useTranslations('About')
+
 	return (
 		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
 			<div className={css.header}>

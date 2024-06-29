@@ -1,6 +1,5 @@
 'use client'
 
-import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
@@ -22,7 +21,7 @@ function FeaturedPostSection() {
 						{t('by')} <span className={css.nameMarker}>John Doe</span> l {t('date')}{' '}
 					</p>
 					<p className={css.postText}>{t('featureDesc')}</p>
-					<Link className={cn(css.btn, '_btn')} href={POST_PAGE_ROUTE}>
+					<Link className={css.btn} href={POST_PAGE_ROUTE}>
 						{t('btn')} &gt;
 					</Link>
 				</div>

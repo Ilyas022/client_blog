@@ -5,13 +5,9 @@ import NavbarMobile from '@/components/NavbarMobile'
 import { useScrollLock } from '@/hooks/useScrollLock'
 
 import css from './MenuBurger.module.scss'
+import { MenuBurgerProps } from './types'
 
-interface IMenuBurger {
-	isOpened: boolean
-	handleOpen: () => void
-}
-
-function MenuBurger({ handleOpen, isOpened }: IMenuBurger) {
+function MenuBurger({ handleOpen, isOpened }: MenuBurgerProps) {
 	const [lockScroll, unlockScroll] = useScrollLock()
 
 	useEffect(() => {

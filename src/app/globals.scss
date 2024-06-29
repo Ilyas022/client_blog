@@ -1,18 +1,1 @@
 @import '@/styles/index.scss';
-
-._btn {
-	display: inline-block;
-	color: $ColorPrimary;
-	transition: background-color 0.3s;
-
-	&:hover {
-		background-color: $ColorButtonHover;
-	}
-}
-
-.container {
-	width: 100%;
-	max-width: $xl8 + 30px;
-	margin: 0 auto;
-	padding: 0 $xs - 1px;
-}

@@ -21,7 +21,7 @@ export default function Home() {
 	const [joinRef, joinSectionInView] = useInViewRef()
 	return (
 		<main>
-			<div className="container">
+			<div className={css.container}>
 				<GreetingSection />
 				<FeaturedSection />
 				<AboutSection />

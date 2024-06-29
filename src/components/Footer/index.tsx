@@ -6,8 +6,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 
-import Logo from '@/components/Logo'
-
 import { links, onSubmit, socialNetworks, validationSchema } from './config'
 import css from './Footer.module.scss'
 
@@ -31,7 +29,7 @@ function Footer() {
 		<footer className={css.footer}>
 			<div className={css.container}>
 				<div className={css.header}>
-					<Logo />
+					<p className={css.logo}>Modsen Client Blog</p>
 					<div className={css.links}>
 						{links.map(({ path, title }) => (
 							<Link
@@ -57,7 +55,7 @@ function Footer() {
 							{...formik.getFieldProps('email')}
 						/>
 						<button
-							className={cn(css.btn, '_btn')}
+							className={css.btn}
 							disabled={!!(formik.touched.email && formik.errors.email)}
 							type="submit"
 						>

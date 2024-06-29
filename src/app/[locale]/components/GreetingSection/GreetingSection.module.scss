@@ -85,13 +85,15 @@
 }
 
 .btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
 	padding: $xs;
 	@include textMBold();
 	background-color: $ColorButton;
 
 	@include screen('mobile') {
 		padding: $xxs $xs;
-
 		@include textS();
 	}
 

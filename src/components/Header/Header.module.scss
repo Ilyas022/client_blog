@@ -12,3 +12,12 @@
 	padding: $xs - 4px $xs + 4px;
 	margin: 0 auto;
 }
+
+.logo {
+	@include h4();
+	cursor: default;
+
+	@include screen('tablet') {
+		@include h5();
+	}
+}

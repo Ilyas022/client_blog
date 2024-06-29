@@ -27,7 +27,7 @@ function FeaturedSection() {
 					</p>
 					<p className={css.postTitle}>{t('featuredTitle')}</p>
 					<p className={css.postDesc}>{t('featureDesc')}</p>
-					<Link className={cn(css.btn, '_btn')} href={POST_PAGE_ROUTE}>
+					<Link className={css.btn} href={POST_PAGE_ROUTE}>
 						{t('btn')} &gt;
 					</Link>
 				</div>

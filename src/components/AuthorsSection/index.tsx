@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 
@@ -6,15 +6,7 @@ import { AUTHOR_PAGE_ROUTE } from '@/constants/routes'
 
 import css from './AuthorsSection.module.scss'
 import { socialNetworks } from './config'
-
-interface AuthorsSectionProps {
-	authors: {
-		fullName: string
-		job: string
-		icon: StaticImageData
-		id: string
-	}[]
-}
+import { AuthorsSectionProps } from './types'
 
 function AuthorsSection({ authors }: AuthorsSectionProps) {
 	const t = useTranslations('Authors')

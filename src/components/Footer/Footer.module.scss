@@ -121,6 +121,9 @@
 }
 
 .btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
 	background-color: $ColorButton;
 	padding: $xs $m;
 	@include textMBold();
@@ -179,5 +182,14 @@
 		&:hover {
 			color: $ColorButton;
 		}
+	}
+}
+
+.logo {
+	@include h4();
+	cursor: default;
+
+	@include screen('tablet') {
+		@include h5();
 	}
 }

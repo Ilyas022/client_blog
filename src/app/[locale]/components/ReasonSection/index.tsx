@@ -21,7 +21,7 @@ function ReasonSection() {
 				<h2 className={css.title}>{t('title')}</h2>
 				<p className={css.description}>{t('desc')}</p>
 				<p className={css.text}>{t('text')}</p>
-				<Link className={cn(css.btn, '_btn')} href={ABOUT_PAGE_ROUTE}>
+				<Link className={css.btn} href={ABOUT_PAGE_ROUTE}>
 					{t('btn')} &gt;
 				</Link>
 			</div>

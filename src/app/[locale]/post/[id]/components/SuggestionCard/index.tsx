@@ -1,23 +1,15 @@
 'use client'
 
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { POST_PAGE_ROUTE } from '@/constants/routes'
 
 import css from './SuggestionCard.module.scss'
+import { SuggestionCardProps } from './types'
 
-interface ISuggestionCard {
-	id: string
-	img: StaticImageData
-	date: string
-	userName: string
-	title: string
-	text: string
-}
-
-function SuggestionCard({ date, img, text, title, userName, id }: ISuggestionCard) {
+function SuggestionCard({ date, img, text, title, userName, id }: SuggestionCardProps) {
 	const t = useTranslations('Suggestion')
 	const tAuthor = useTranslations('Authors')
 	const tPost = useTranslations('Posts')

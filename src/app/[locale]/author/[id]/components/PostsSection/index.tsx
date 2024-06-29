@@ -2,15 +2,27 @@
 
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
+import { useState, useEffect } from 'react'
 
-import { getPosts } from '@/utils/getPosts'
+import { Post } from '@/types/interfaces'
 
 import css from './PostsSection.module.scss'
 
 function PostsSection({ userId }: { userId: string }) {
 	const tPost = useTranslations('Posts')
 	const tCategory = useTranslations('Categories')
-	const posts = getPosts(userId)
+	const [posts, setPosts] = useState<Post[]>()
+
+	useEffect(() => {
+		const getData = async () => {
+			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}postbyuserid/${userId}`)
+			const data = await res.json()
+			setPosts(data)
+		}
+		getData()
+	}, [])
+
+	if (!posts?.length) return null
 
 	return (
 		<section className={css.section}>

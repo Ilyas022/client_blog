@@ -1,6 +1,5 @@
 'use client'
 
-import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
@@ -26,7 +25,7 @@ function GreetingSection() {
 					{t('by')} <span className={css.nameMarker}>James West</span> | {t('date')}{' '}
 				</p>
 				<p className={css.description}>{t('desc')}</p>
-				<Link href={POST_PAGE_ROUTE} className={cn(css.btn, '_btn')}>
+				<Link href={POST_PAGE_ROUTE} className={css.btn}>
 					{t('btn')} &gt;
 				</Link>
 			</div>

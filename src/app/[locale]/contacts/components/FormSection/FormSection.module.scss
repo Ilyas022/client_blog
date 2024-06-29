@@ -51,6 +51,9 @@
 }
 
 .btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
 	text-align: center;
 	background-color: $ColorButton;
 	padding: $xs $m;

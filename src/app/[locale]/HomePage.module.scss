@@ -6,3 +6,10 @@
 		opacity: 1;
 	}
 }
+
+.container {
+	width: 100%;
+	max-width: $xl8 + 30px;
+	margin: 0 auto;
+	padding: 0 $xs - 1px;
+}

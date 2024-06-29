@@ -27,7 +27,14 @@
 }
 
 .btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
 	padding: $xs - 1px;
 	background-color: $ColorButton;
 	border-radius: $xxs - 2px;
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
 }

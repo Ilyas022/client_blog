@@ -3,9 +3,9 @@
 import Image from 'next/image'
 import { useSearchParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
-import { getAllPosts } from '@/utils/getAllPosts'
+import { Post } from '@/types/interfaces'
 
 import css from './PostList.module.scss'
 
@@ -18,12 +18,21 @@ function PostList() {
 	const currentCategory = params.get('category') || ''
 	const currentSearch = params.get('search') || ''
 	const currentTag = params.get('tag') || ''
+	const [posts, setPosts] = useState<Post[]>()
 
-	const posts = useMemo(() => {
-		const initPosts = getAllPosts()
+	useEffect(() => {
+		const getData = async () => {
+			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts`)
+			const data = await res.json()
+			setPosts(data)
+		}
+		getData()
+	}, [])
+	const postsData = useMemo(() => {
+		if (!posts?.length) return
 		const filteredByCategory = currentCategory
-			? initPosts.filter((post) => currentCategory.includes(post.category.id))
-			: initPosts
+			? posts.filter((post) => currentCategory.includes(post.category.id))
+			: posts
 
 		const filteredByTagPosts = currentTag
 			? filteredByCategory.filter((post) => {
@@ -38,10 +47,10 @@ function PostList() {
 			)
 		})
 		return filteredPosts
-	}, [currentCategory, currentSearch, currentTag])
+	}, [currentCategory, currentSearch, currentTag, posts])
 	return (
 		<div>
-			{posts.map(({ category, id, title, img, text }) => (
+			{postsData?.map(({ category, id, title, img, text }) => (
 				<div key={id} className={css.post}>
 					<Image className={css.postImg} alt="post image" src={img} />
 					<div className={css.postInfo}>
