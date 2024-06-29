@@ -31,3 +31,9 @@ export interface Post {
 	date: string
 	tags: string[]
 }
+
+export interface Testimonial {
+	id: string
+	author: string
+	title: string
+}

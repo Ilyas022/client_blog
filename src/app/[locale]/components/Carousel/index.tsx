@@ -19,6 +19,7 @@ function Carousel({ data }: CarouselProps) {
 	const tAuthors = useTranslations('Authors')
 
 	useEffect(() => {
+		if (!carouselRef.current) return
 		const elem = carouselRef.current as unknown as HTMLDivElement
 		const { width, height } = elem.getBoundingClientRect()
 		if (carouselRef.current) {
@@ -27,8 +28,9 @@ function Carousel({ data }: CarouselProps) {
 				height,
 			})
 		}
-	}, [])
+	}, [data])
 
+	if (!data) return null
 	return (
 		<div className={css.carousel}>
 			<div className={css.container}>
