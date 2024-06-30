@@ -1,26 +1,12 @@
-'use client'
-
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
-import { useEffect, useState } from 'react'
-
-import { Author } from '@/types/interfaces'
+import { getTranslations } from 'next-intl/server'
 
 import css from './AuthorSection.module.scss'
-import { socialNetworks } from './config'
+import { socialNetworks, getAuthor } from './config'
 
-function AuthorSection({ userId }: { userId: string }) {
-	const t = useTranslations('Authors')
-	const [author, setAuthor] = useState<Author>()
-
-	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}author/${userId}`)
-			const data = await res.json()
-			setAuthor(data)
-		}
-		getData()
-	}, [])
+async function AuthorSection({ userId }: { userId: string }) {
+	const t = await getTranslations('Authors')
+	const author = await getAuthor(userId)
 
 	if (author) {
 		const { desc, icon, img, intro } = author
