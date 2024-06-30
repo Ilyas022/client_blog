@@ -1,39 +1,18 @@
-'use client'
-
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
-import { useState, useEffect } from 'react'
+import { getTranslations } from 'next-intl/server'
 
 import startUpIcon from '@/assets/icons/startUpIcon.svg'
 import { Author, Post } from '@/types/interfaces'
 
+import { getPost, geAuthor } from './config'
 import css from './PostSection.module.scss'
 
-function PostSection({ postId }: { postId: string }) {
-	const tAuthor = useTranslations('Authors')
-	const tPost = useTranslations('Posts')
-	const tCategory = useTranslations('Categories')
-	const [author, setAuthors] = useState<Author>()
-	const [post, setPost] = useState<Post>()
-
-	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}post/${postId}`)
-			const data = await res.json()
-			setPost(data)
-		}
-		getData()
-	}, [])
-
-	useEffect(() => {
-		if (!post) return
-		const getData = async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}author/${post.author}`)
-			const data = await res.json()
-			setAuthors(data)
-		}
-		getData()
-	}, [post])
+async function PostSection({ postId }: { postId: string }) {
+	const tAuthor = await getTranslations('Authors')
+	const tPost = await getTranslations('Posts')
+	const tCategory = await getTranslations('Categories')
+	const post: Post = await getPost(postId)
+	const author: Author = await geAuthor(post.author)
 
 	if ((!post && !author) || !author || !post) {
 		return null

@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
@@ -9,6 +7,7 @@ import { mockPosts } from '@/constants/mockPosts'
 import { POST_PAGE_ROUTE } from '@/constants/routes'
 
 import css from './AllPostsSection.module.scss'
+import PostItem from '../PostItem'
 
 function AllPostsSection() {
 	const [currentPage, setCurrentPage] = useState(0)
@@ -43,14 +42,14 @@ function AllPostsSection() {
 		const startIndex = currentPage * postsPerPage
 		const slicedPosts = mockPosts.slice(startIndex, startIndex + postsPerPage)
 		return slicedPosts.map(({ category, img, text, title, id }) => (
-			<Link href={`/${locale}${POST_PAGE_ROUTE}/${id}`} className={css.post} key={id}>
-				<Image alt="" src={img} className={css.postImg} />
-				<div>
-					<p className={css.postCategory}>{tCategories(category.name)}</p>
-					<p className={css.postTitle}>{tPosts(title)}</p>
-					<p className={css.postText}>{tPosts(text)}</p>
-				</div>
-			</Link>
+			<PostItem
+				category={tCategories(category.name)}
+				href={`/${locale}${POST_PAGE_ROUTE}/${id}`}
+				img={img}
+				text={tPosts(text)}
+				title={tPosts(title)}
+				key={id}
+			/>
 		))
 	}, [currentPage])
 

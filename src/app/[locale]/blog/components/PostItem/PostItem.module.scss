@@ -1,0 +1,63 @@
+.post {
+	display: flex;
+	gap: $s;
+	align-items: center;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $ColorButton;
+	}
+
+	@include screen('mobile') {
+		flex-direction: column;
+		margin: 0 auto;
+		gap: $xs - 1px;
+	}
+}
+
+.postCategory {
+	text-transform: uppercase;
+	letter-spacing: 0.19em;
+	color: $ColorUser;
+	margin-bottom: $xs + 4px;
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+	}
+}
+
+.postTitle {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('non-desktop') {
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		@include h4();
+		margin-bottom: $xxs;
+	}
+}
+
+.postText {
+	color: $ColorTextLight;
+}
+
+.postImg {
+	max-width: $xl3 + 90px;
+	max-height: $xl2 + 18px;
+	object-fit: cover;
+
+	@include screen('non-desktop') {
+		max-width: none;
+		max-height: none;
+		width: 40%;
+		height: auto;
+	}
+
+	@include screen('mobile') {
+		width: 100%;
+		max-height: $xl2 + 30px;
+	}
+}

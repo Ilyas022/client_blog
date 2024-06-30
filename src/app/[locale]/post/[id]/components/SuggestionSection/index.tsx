@@ -1,42 +1,21 @@
-'use client'
-
-import { useTranslations } from 'next-intl'
-import { useEffect, useMemo, useState } from 'react'
+import { getTranslations } from 'next-intl/server'
 
 import { Author, Post } from '@/types/interfaces'
 
+import { getPosts, getAuthors } from './config'
 import css from './SuggestionSection.module.scss'
 import SuggestionCard from '../SuggestionCard'
 
-function SuggestionSection() {
-	const t = useTranslations('Suggestion')
-	const [posts, setPosts] = useState<Post[]>()
-	const [authors, setAuthors] = useState<Author[]>()
+async function SuggestionSection() {
+	const t = await getTranslations('Suggestion')
 
-	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts`)
-			const data = await res.json()
-			setPosts(data)
-		}
-		getData()
-	}, [])
+	const posts: Post[] = await getPosts()
+	const authors: Author[] = await getAuthors()
 
-	useEffect(() => {
-		const getData = async () => {
-			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}authors`)
-			const data = await res.json()
-			setAuthors(data)
-		}
-		getData()
-	}, [])
-
-	const suggestions = useMemo(() => {
-		return posts?.slice(0, 3).map((post) => {
-			const author = authors?.find((authorData) => authorData.id === post.author)
-			return { ...post, author }
-		})
-	}, [posts])
+	const suggestions = posts.slice(0, 3).map((post) => {
+		const author = authors.find((authorData) => authorData.id === post.author)
+		return { ...post, author }
+	})
 
 	if (!suggestions) return null
 	return (
