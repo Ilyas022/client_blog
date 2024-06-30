@@ -2,7 +2,10 @@
 	display: flex;
 	justify-content: space-between;
 	gap: $xxl + 27px;
-	margin-bottom: $xxl + 8px;
+	margin: 0 auto $xxl + 8px;
+	width: 100%;
+	max-width: $xl8 + 30px;
+	padding: 0 $xs - 1px;
 
 	@include screen('small-desktop') {
 		gap: $m + 12px;

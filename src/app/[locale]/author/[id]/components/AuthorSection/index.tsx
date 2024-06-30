@@ -1,6 +1,5 @@
 'use client'
 
-import cn from 'classnames'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
@@ -27,7 +26,7 @@ function AuthorSection({ userId }: { userId: string }) {
 		const { desc, icon, img, intro } = author
 		return (
 			<section className={css.section}>
-				<div className={cn('container', css.container)}>
+				<div className={css.container}>
 					<Image className={css.userImage} alt="" src={img || icon} />
 					<div className={css.userInfo}>
 						<p className={css.intro}>{t(intro)}</p>
