@@ -1,0 +1,71 @@
+.section {
+	display: flex;
+	gap: $xl - 4px;
+	padding: $xl - 8px $xxl - 8px $l - 5px;
+	@include textS();
+	margin-bottom: $xxl + 8px;
+	background-color: $ColorPostHover;
+	opacity: 0;
+	transition: opacity 2s;
+
+	&Visible {
+		opacity: 1;
+	}
+
+	@include screen('small-desktop') {
+		padding: $l - 10px;
+		gap: $m - 2px;
+	}
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+		padding: $s + 8px;
+		gap: $s - 2px;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+		flex-direction: column;
+		padding: $s + 8px;
+		gap: $s + 8px;
+	}
+
+	@include screen('(max-width: 500px)') {
+		padding: $xs + 4px;
+		gap: $xs + 4px;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: $xxs + 4px;
+
+	@include screen('mobile') {
+		text-align: center;
+		@include h3();
+	}
+}
+
+.description {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('tablet') {
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		@include h4();
+	}
+}
+
+.separator {
+	width: $xxs - 6px;
+	background-color: $ColorTextLight;
+	opacity: 0.4;
+
+	@include screen('mobile') {
+		display: none;
+	}
+}

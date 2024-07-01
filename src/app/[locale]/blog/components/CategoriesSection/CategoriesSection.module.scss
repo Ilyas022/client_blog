@@ -1,0 +1,38 @@
+.section {
+	@include textS();
+	color: $ColorPrimary;
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.title {
+	@include h2();
+	margin-bottom: $m;
+
+	@include screen('mobile') {
+		@include h3();
+		margin-bottom: $xs;
+	}
+}
+
+.categories {
+	display: flex;
+	gap: $s;
+	justify-content: space-between;
+
+	@include screen('non-desktop') {
+		gap: $xs + 4px;
+		flex-wrap: wrap;
+	}
+
+	@include screen('mobile') {
+		justify-content: center;
+	}
+}

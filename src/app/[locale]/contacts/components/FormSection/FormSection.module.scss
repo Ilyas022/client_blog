@@ -1,0 +1,79 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: $xs;
+	max-width: $xl6 - 32px;
+	margin: 0 auto;
+	@include textS();
+	margin-bottom: $l - 10px;
+
+	@include screen('mobile') {
+		margin-bottom: $m;
+	}
+}
+
+.formInput {
+	position: relative;
+}
+
+.error {
+	position: absolute;
+	top: $xxs - 18px;
+	left: $xs - 1px;
+	padding: 0 $xxs + 2px;
+	background-color: $ColorWhite;
+	color: $ColorError;
+	@include textXs();
+}
+
+.input {
+	width: 100%;
+	background-color: transparent;
+	border: $xxs - 7px solid $ColorBorderIntense;
+	border-radius: $xxs - 6px;
+	padding: $xs + 8px;
+	color: $ColorPrimary;
+	@include textS();
+
+	&::placeholder {
+		color: $ColorPrimary;
+	}
+
+	@include screen('(max-width: 600px)') {
+		margin-right: 0;
+		width: 100%;
+		@include textXs();
+	}
+
+	&Invalid {
+		border-color: $ColorError;
+	}
+}
+
+.btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
+	text-align: center;
+	background-color: $ColorButton;
+	padding: $xs $m;
+	@include textMBold();
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+
+	&:disabled {
+		background-color: $ColorTextLight;
+
+		&:hover {
+			background-color: $ColorInfo;
+		}
+	}
+
+	@include screen('(max-width: 600px)') {
+		width: 100%;
+		text-align: center;
+		@include textXs();
+	}
+}

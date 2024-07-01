@@ -1,0 +1,173 @@
+.section {
+	display: flex;
+	gap: $s;
+	color: $ColorBlack;
+	margin-bottom: $xxl + 8px;
+	@include h4();
+	opacity: 0;
+	transition: opacity 2s;
+
+	&Visible {
+		opacity: 1;
+	}
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		flex-direction: column;
+		margin-bottom: $s;
+	}
+}
+
+.postCol {
+	flex: 1 1 auto;
+	max-width: $xl5 + 33px;
+
+	&Title {
+		@include h2();
+		margin-bottom: $s;
+
+		@include screen('mobile') {
+			@include h3();
+			max-width: none;
+		}
+	}
+}
+
+.post {
+	padding: $s;
+	border: $xxs - 7px solid $ColorBorder;
+
+	@include screen('tablet') {
+		padding: $xs + 4px;
+	}
+
+	@include screen('mobile') {
+		padding: $xxs + 2px;
+	}
+}
+
+.userInfo {
+	@include textXsMedium();
+	margin-bottom: $xs;
+}
+
+.postTitle {
+	@include h3();
+	margin-bottom: $xs;
+
+	@include screen('tablet') {
+		@include h5();
+	}
+
+	@include screen('mobile') {
+		@include h5();
+	}
+}
+
+.postImg {
+	width: 100%;
+	max-height: $xl2 + 52px;
+	margin-bottom: $s;
+	object-fit: cover;
+
+	@include screen('mobile') {
+		height: 100%;
+		max-height: none;
+	}
+}
+
+.postDesc {
+	@include textS();
+	margin-bottom: $s;
+
+	@include screen('mobile') {
+		@include textXs();
+	}
+}
+
+.postsCol {
+	&Title {
+		@include h2();
+
+		@include screen('tablet') {
+			@include h3();
+		}
+
+		@include screen('mobile') {
+			@include h3();
+		}
+	}
+}
+
+.postsHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: $s;
+
+	@include screen('mobile') {
+		margin-bottom: $xs;
+	}
+}
+
+.showPosts {
+	@include textS();
+}
+
+.smallPost {
+	padding: $s $s $xs + 9px;
+	transition: background-color 0.3s;
+
+	@include screen('tablet') {
+		padding: $xs + 4px;
+	}
+
+	@include screen('mobile') {
+		padding: $xs - 1px;
+	}
+
+	&:hover {
+		background-color: $ColorPostHover;
+	}
+
+	&Title {
+		@include screen('tablet') {
+			@include h5();
+		}
+
+		@include screen('mobile') {
+			@include h5();
+		}
+	}
+
+	&Info {
+		@include textXs();
+		color: $ColorInfo;
+		margin-bottom: $xxs;
+	}
+
+	&UserMarker {
+		color: $ColorUser;
+	}
+}
+
+.btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
+	padding: $xs;
+	@include textMBold();
+	background-color: $ColorButton;
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+
+	@include screen('mobile') {
+		padding: $xxs $xs;
+		@include textS();
+	}
+}

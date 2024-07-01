@@ -1,0 +1,83 @@
+// Colors
+// -------------------------------------------------------------------------------------------------
+$ColorPrimary: #232536;
+$ColorButton: #ffd050;
+$ColorButtonHover: #edc14a;
+$ColorWhite: #ffffff;
+$ColorBlack: #000000;
+$ColorBg: #000000b8;
+$ColorUser: #592ea9;
+$ColorInfo: #4c4c4c;
+$ColorBorder: #6d6e761a;
+$ColorBorderIntense: #6d6e7680;
+$ColorPostHover: #fbf6ea;
+$ColorPurpleLight: #f4f0f8;
+$ColorText: #232536;
+$ColorTextLight: #6d6e76;
+$ColorAuthorBg: #f4f4f4;
+$ColorFormBg: #ffffff0d;
+$ColorError: #ff0000;
+$ColorCategoryBorder: #c1c1c3;
+
+:export {
+	ColorPrimary: $ColorPrimary;
+	ColorButton: $ColorButton;
+	ColorButtonHover: $ColorButtonHover;
+	ColorWhite: $ColorWhite;
+}
+
+// Typography
+// -------------------------------------------------------------------------------------------------
+// Inter
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+// Sen
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@700&display=swap');
+
+$FontInter: 'Inter', sans-serif;
+$FontSen: 'Sen', sans-serif;
+
+// Media queries
+// -------------------------------------------------------------------------------------------------
+$media-mobile-small-max: 350;
+$media-mobile-max: 767;
+$media-tablet-min: 768;
+$media-tablet-max: 1024;
+$media-desktop-min: $media-tablet-max + 1;
+$media-desktop-hd-min: 1920;
+$media-desktop-small-max: 1300;
+
+$media-mobile: '(max-width: #{$media-mobile-max}px)';
+$media-mobile-small: '(max-width: #{$media-mobile-small-max}px)';
+$media-mobile-landscape: '(max-width: #{$media-mobile-max}px) and (orientation: landscape)';
+$media-mobile-portrait: '(max-width: #{$media-mobile-max}px) and (orientation: portrait)';
+
+$media-tablet: '(min-width: #{$media-tablet-min}px) and (max-width: #{$media-tablet-max}px)';
+$media-tablet-landscape: '(min-width: #{$media-tablet-min}px) and (max-width: #{$media-tablet-max}px) and (orientation: landscape)';
+$media-tablet-portrait: '(min-width: #{$media-tablet-min}px) and (max-width: #{$media-tablet-max}px) and (orientation: portrait)';
+
+$media-desktop: '(min-width: #{$media-desktop-min}px)';
+$media-desktop-hd: '(min-width: #{$media-desktop-hd-min}px)';
+$media-small-desktop: '(min-width: #{$media-desktop-min}px) and (max-width: #{$media-desktop-small-max}px)';
+
+$media-non-mobile: '(min-width: #{$media-mobile-max}px)';
+$media-non-desktop: '(max-width: #{$media-tablet-max}px)';
+
+// Sizes
+// -------------------------------------------------------------------------------------------------
+$xxs: 8px;
+$xs: 16px;
+$s: 32px;
+$m: 48px;
+$l: 80px;
+$xl: 100px;
+$xxl: 120px;
+$xxxl: 160px;
+$xl1: 200px;
+$xl2: 300px;
+$xl3: 400px;
+$xl4: 600px;
+$xl5: 700px;
+$xl6: 800px;
+$xl7: 1100px;
+$xl8: 1280px;
+$xl9: 1400px;

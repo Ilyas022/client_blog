@@ -1,0 +1,298 @@
+.section {
+	margin-bottom: $xxl + 8px;
+
+	@include textS();
+	margin-top: $l;
+
+	@include screen('small-desktop') {
+		margin-top: $s + 8px;
+	}
+
+	@include screen('non-desktop') {
+		margin-top: 0;
+	}
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+		margin-top: $xs + 4px;
+	}
+
+	@include screen('mobile') {
+		margin-top: $xs + 4px;
+		margin-bottom: $s;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: $s;
+
+	@include screen('tablet') {
+		margin-bottom: $s;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: $xxs;
+	}
+
+	> .text {
+		max-width: $xl3 + 80px;
+
+		@include screen('tablet') {
+			max-width: none;
+			width: 75%;
+		}
+
+		@include screen('mobile') {
+			max-width: none;
+			width: 75%;
+			@include textXs();
+		}
+	}
+}
+
+.intro {
+	padding: $m + 16px;
+	background-color: $ColorWhite;
+
+	@include screen('small-desktop') {
+		padding: $m + 16px $s $m + 16px;
+	}
+
+	@include screen('non-desktop') {
+		padding: $m + 16px $s $m + 16px;
+	}
+
+	@include screen('tablet') {
+		padding: 0;
+	}
+
+	@include screen('mobile') {
+		padding: 0;
+	}
+
+	> .title {
+		margin-bottom: $xs;
+
+		@include screen('mobile') {
+			margin-bottom: $xxs;
+		}
+	}
+
+	> .description {
+		max-width: $xl3 + 50px;
+
+		@include screen('small-desktop') {
+			max-width: none;
+		}
+	}
+}
+
+.title {
+	@include textS();
+	text-transform: uppercase;
+}
+
+.description {
+	@include h1();
+
+	@include screen('small-desktop') {
+		@include h2();
+	}
+
+	@include screen('tablet') {
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		@include h4();
+		margin-bottom: $xxs;
+	}
+}
+
+.statsContainer {
+	position: relative;
+	z-index: -1;
+	margin-top: $xxs - 72px;
+
+	@include screen('tablet') {
+		margin-top: 0;
+	}
+
+	@include screen('mobile') {
+		margin-top: 0;
+	}
+}
+
+.img {
+	width: 100%;
+	max-height: $xl3 + 44px;
+	object-fit: cover;
+
+	@include screen('small-desktop') {
+		max-height: $xl2 + 50px;
+	}
+
+	@include screen('non-desktop') {
+		max-height: $xl2 + 50px;
+	}
+
+	@include screen('tablet') {
+		max-height: $xl2;
+	}
+
+	@include screen('mobile') {
+		max-height: $xl1 + 50px;
+	}
+}
+
+.stats {
+	position: absolute;
+	bottom: $xs + 7px;
+	left: $xl + 9px;
+	display: flex;
+	gap: $m + 20px;
+	padding: $s $m;
+	background-color: $ColorButton;
+
+	@include screen('small-desktop') {
+		padding: $s;
+		gap: $m - 8px;
+	}
+
+	@include screen('non-desktop') {
+		padding: $s;
+		gap: $s + 8px;
+	}
+
+	@include screen('mobile') {
+		bottom: 0;
+		left: 0;
+		text-align: center;
+		padding: $xs - 1px;
+		gap: $xs - 1px;
+		width: 100%;
+		justify-content: center;
+	}
+}
+.statNumber {
+	@include title();
+
+	@include screen('small-desktop') {
+		@include h1();
+	}
+
+	@include screen('non-desktop') {
+		@include h1();
+	}
+
+	@include screen('tablet') {
+		@include h2();
+	}
+
+	@include screen('mobile') {
+		@include h4();
+	}
+}
+
+.statTitle {
+	@include screen('mobile') {
+		@include textXs();
+	}
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: $xl + 9px;
+	display: flex;
+	justify-content: flex-end;
+	height: $xs + 7;
+
+	@include screen('mobile') {
+		display: none;
+	}
+}
+
+.yellowItem {
+	display: block;
+	width: $xl4;
+	background-color: $ColorButton;
+
+	@include screen('tablet') {
+		width: $xl3;
+	}
+}
+
+.purpleItem {
+	display: block;
+	width: $xl2 - 30px;
+	background-color: $ColorUser;
+
+	@include screen('tablet') {
+		width: $xl1;
+	}
+}
+
+.direction {
+	display: flex;
+	gap: $s;
+	padding: $xl + 28px $xl + 8px $m + 16px;
+	background: $ColorPurpleLight;
+
+	@include screen('small-desktop') {
+		padding: $m + 16px;
+	}
+
+	@include screen('non-desktop') {
+		padding: $m + 16px;
+	}
+
+	@include screen('tablet') {
+		padding: $s;
+	}
+
+	@include screen('mobile') {
+		flex-direction: column;
+		padding: $xs;
+	}
+
+	.title {
+		margin-bottom: 24px;
+
+		@include screen('tablet') {
+			margin-bottom: $xxs;
+		}
+
+		@include screen('mobile') {
+			margin-bottom: $xxs;
+		}
+	}
+
+	.text {
+		@include screen('mobile') {
+			@include textXs();
+		}
+	}
+}
+
+.subDescription {
+	@include h3();
+	margin-bottom: $xs;
+
+	@include screen('tablet') {
+		@include h4();
+		margin-bottom: $xxs;
+	}
+
+	@include screen('mobile') {
+		@include h5();
+		margin-bottom: $xxs;
+	}
+}

@@ -1,0 +1,105 @@
+.section {
+	position: relative;
+	@include textS();
+	margin-bottom: $xxl + 8px;
+	opacity: 0;
+	transition: opacity 2s;
+
+	&Visible {
+		opacity: 1;
+	}
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.img {
+	width: $xl6 + 149px;
+	height: $xl5 + 5px;
+
+	@include screen('tablet') {
+		display: none;
+	}
+
+	@include screen('mobile') {
+		display: none;
+	}
+}
+
+.info {
+	position: absolute;
+	bottom: $xxs - 9px;
+	right: 0;
+	background-color: $ColorWhite;
+	width: $xl5 + 6px;
+	height: $xl3 + 184px;
+	padding: $l;
+
+	@include screen('tablet') {
+		width: auto;
+		height: auto;
+		padding: 0 $m + 2px;
+		position: static;
+	}
+
+	@include screen('mobile') {
+		width: auto;
+		height: auto;
+		padding: 0;
+		position: static;
+	}
+}
+
+.title {
+	text-transform: uppercase;
+	color: $ColorPrimary;
+	font-weight: 600;
+	margin-bottom: $xs + 8px;
+
+	@include screen('tablet') {
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		@include h3();
+		text-align: center;
+		margin-bottom: $xxs;
+	}
+}
+
+.description {
+	@include h1();
+	margin-bottom: $xs;
+
+	@include screen('mobile') {
+		@include h5();
+		margin-bottom: $xxs;
+	}
+}
+
+.text {
+	margin-bottom: $s;
+	color: $ColorTextLight;
+}
+
+.btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
+	padding: $xs $m;
+	background-color: $ColorButton;
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+
+	@include screen('mobile-small') {
+		width: 100%;
+		text-align: center;
+	}
+}

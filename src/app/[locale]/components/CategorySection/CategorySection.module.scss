@@ -1,0 +1,43 @@
+.section {
+	@include textS();
+	margin-bottom: $xxl + 8px;
+	opacity: 0;
+	transition: opacity 2s;
+
+	&Visible {
+		opacity: 1;
+	}
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.title {
+	@include h2();
+	text-align: center;
+	margin-bottom: $m;
+
+	@include screen('mobile') {
+		@include h3();
+	}
+}
+
+.categories {
+	display: flex;
+	gap: $s;
+	justify-content: space-between;
+
+	@include screen('non-desktop') {
+		gap: $xs + 4px;
+		flex-wrap: wrap;
+	}
+
+	@include screen('mobile') {
+		justify-content: center;
+	}
+}

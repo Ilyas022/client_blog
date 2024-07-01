@@ -1,0 +1,118 @@
+.section {
+	position: relative;
+	@include textS();
+	margin-bottom: $xl - 4px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.title {
+	color: $ColorPrimary;
+	@include h2();
+	text-align: center;
+	margin-bottom: $m;
+
+	@include screen('tablet') {
+		@include h3();
+	}
+
+	@include screen('mobile') {
+		@include h3();
+		text-align: center;
+		margin-bottom: $s;
+	}
+}
+
+.authors {
+	display: flex;
+	gap: $s;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-bottom: $l + 16px;
+
+	@include screen('small-desktop') {
+		margin-bottom: $m + 2px;
+	}
+
+	@include screen('non-desktop') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		gap: $xs + 2px;
+	}
+}
+
+.author {
+	flex: 0 1 23%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: $s + 8px;
+	background-color: $ColorAuthorBg;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $ColorButton;
+	}
+
+	@include screen('small-desktop') {
+		flex-basis: 31%;
+	}
+
+	@include screen('tablet') {
+		flex-basis: 43%;
+	}
+
+	@include screen('mobile') {
+		flex-basis: 90%;
+	}
+
+	@include screen('mobile-small') {
+		flex-basis: 100%;
+	}
+
+	&Img {
+		width: $xxl + 8px;
+		height: $xxl + 8px;
+		border-radius: 50%;
+		margin-bottom: $xs + 4px;
+	}
+
+	&FullName {
+		@include h3();
+	}
+
+	&Job {
+		@include textXs();
+		color: $ColorTextLight;
+		margin-bottom: $xs + 4px;
+	}
+}
+
+.icons {
+	display: flex;
+	gap: $xs;
+
+	& > * {
+		width: $xs;
+		height: $xs;
+		transition: color 0.3s;
+
+		@include screen('mobile') {
+			width: $xs + 9px;
+			height: $xs + 9px;
+		}
+
+		&:hover {
+			color: $ColorButton;
+		}
+	}
+}

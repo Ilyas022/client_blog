@@ -1,0 +1,41 @@
+.section {
+	@include textS();
+	max-width: $xl3 + 42px;
+	margin: 0 auto $xxl + 8px;
+	text-align: center;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.title {
+	@include h2();
+	margin-bottom: $xs;
+
+	@include screen('mobile') {
+		@include h3();
+	}
+}
+
+.text {
+	color: $ColorTextLight;
+	margin-bottom: $s;
+}
+
+.btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
+	background-color: $ColorButton;
+	padding: $xs $m;
+	@include textMBold();
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+}

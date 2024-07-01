@@ -1,0 +1,38 @@
+.section {
+	padding-bottom: $m + 16px;
+	border-bottom: $xxs - 7px solid $ColorTextLight;
+	margin-bottom: $xxl + 8px;
+
+	@include screen('tablet') {
+		margin-bottom: $m;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+	}
+}
+
+.title {
+	@include h2();
+	margin-bottom: $m + 16px;
+
+	@include screen('mobile') {
+		margin-bottom: $s;
+		@include h3();
+	}
+}
+
+.suggestions {
+	display: flex;
+	gap: $s;
+
+	@include screen('tablet') {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	@include screen('mobile') {
+		flex-direction: column;
+		gap: $m + 12px;
+	}
+}

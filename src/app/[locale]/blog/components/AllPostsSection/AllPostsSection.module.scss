@@ -1,0 +1,51 @@
+.section {
+	@include textS();
+	color: $ColorPrimary;
+	margin-bottom: $m + 16px;
+}
+
+.title {
+	@include h1();
+	padding-bottom: $s;
+	border-bottom: $xxs - 7px solid $ColorTextLight;
+	margin-bottom: $m + 16px;
+
+	@include screen('tablet') {
+		@include h2();
+		padding-bottom: $xs;
+		margin-bottom: $s;
+	}
+
+	@include screen('mobile') {
+		@include h3();
+		padding-bottom: $xs;
+		margin-bottom: $s;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: $m + 16px;
+	margin-bottom: $m + 16px;
+
+	@include screen('mobile') {
+		gap: $m - 8px;
+	}
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: $xs + 1px;
+}
+
+.controlBtn {
+	@include h3();
+
+	&:disabled {
+		@include h4();
+		color: $ColorTextLight;
+	}
+}

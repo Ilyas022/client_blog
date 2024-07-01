@@ -1,0 +1,195 @@
+.footer {
+	background-color: $ColorPrimary;
+	color: $ColorWhite;
+}
+
+.container {
+	width: 100%;
+	max-width: $xl8 + 30px;
+	padding: $m + 4px $xs - 1px;
+	margin: 0 auto;
+	@include textS();
+
+	@include screen('mobile') {
+		padding: $s - 2px $xs - 1px;
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: $m;
+}
+
+.links {
+	display: flex;
+	gap: $xs + 8px;
+
+	@include screen('mobile') {
+		display: none;
+	}
+}
+
+.link {
+	transition: color 0.3s;
+
+	&:hover {
+		color: $ColorButtonHover;
+	}
+}
+
+.activeLink {
+	color: $ColorButton;
+}
+
+.form {
+	display: flex;
+	align-items: flex-start;
+	padding: $l $m + 16px;
+	background-color: $ColorFormBg;
+	margin-bottom: $m;
+
+	@include screen('small-desktop') {
+		padding: $m + 12px $m + 2px;
+	}
+
+	@include screen('non-desktop') {
+		flex-direction: column;
+		gap: $s + 8px;
+	}
+
+	@include screen('mobile') {
+		gap: $xs + 4px;
+		padding: $s - 2px;
+	}
+
+	@include screen('(max-width: 600px)') {
+		margin-bottom: $s -2 px;
+	}
+
+	&Container {
+		margin-left: auto;
+
+		@include screen('non-desktop') {
+			margin-left: 0;
+		}
+
+		@include screen('(max-width: 600px)') {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: $xs + 4px;
+		}
+	}
+}
+
+.title {
+	@include h2();
+	max-width: $xl3 + 182px;
+
+	@include screen('small-desktop') {
+		max-width: $xl3;
+	}
+
+	@include screen('mobile') {
+		@include h4();
+	}
+}
+
+.input {
+	background-color: transparent;
+	border: $xxs - 7px solid $ColorInfo;
+	padding: $xs - 2px $xs + 8px;
+	color: $ColorWhite;
+	margin-right: $xs + 8px;
+	@include textS();
+
+	&::placeholder {
+		color: $ColorTextLight;
+	}
+
+	@include screen('(max-width: 600px)') {
+		margin-right: 0;
+		width: 100%;
+		@include textXs();
+	}
+
+	&Invalid {
+		border-color: red;
+	}
+}
+
+.btn {
+	display: inline-block;
+	color: $ColorPrimary;
+	transition: background-color 0.3s;
+	background-color: $ColorButton;
+	padding: $xs $m;
+	@include textMBold();
+
+	&:hover {
+		background-color: $ColorButtonHover;
+	}
+
+	&:disabled {
+		background-color: $ColorTextLight;
+
+		&:hover {
+			background-color: $ColorInfo;
+		}
+	}
+
+	@include screen('(max-width: 600px)') {
+		width: 100%;
+		text-align: center;
+		@include textXs();
+	}
+}
+
+.info {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	@include screen('(max-width: 600px)') {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: $xs + 4px;
+	}
+}
+
+.text {
+	color: $ColorTextLight;
+}
+
+.socialNetworks {
+	display: flex;
+	gap: $xs + 10px;
+	color: $ColorTextLight;
+
+	& > * {
+		width: $xs;
+		height: $xs;
+		transition: color 0.3s;
+
+		@include screen('mobile') {
+			width: $xs + 9px;
+			height: $xs + 9px;
+		}
+
+		&:hover {
+			color: $ColorButton;
+		}
+	}
+}
+
+.logo {
+	@include h4();
+	cursor: default;
+
+	@include screen('tablet') {
+		@include h5();
+	}
+}

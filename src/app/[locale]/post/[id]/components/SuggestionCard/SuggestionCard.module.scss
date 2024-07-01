@@ -1,0 +1,66 @@
+.card {
+	max-width: $xl3 + 5px;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $ColorButton;
+	}
+
+	@include screen('tablet') {
+		max-width: 47%;
+	}
+
+	@include screen('mobile') {
+		max-width: none;
+	}
+}
+
+.img {
+	width: 100%;
+	max-height: $xl2 + 18px;
+	object-fit: cover;
+	margin-bottom: $s;
+
+	@include screen('small-desktop') {
+		max-height: $xl1 + 50px;
+	}
+
+	@include screen('mobile') {
+		margin-bottom: $xs;
+	}
+
+	@include screen('(max-width: 600px)') {
+		max-height: $xl1;
+	}
+}
+
+.postInfo {
+	margin-bottom: $xs;
+	@include textXs();
+
+	@include screen('mobile') {
+		margin-bottom: $xxs;
+	}
+}
+
+.userMarker {
+	color: $ColorUser;
+}
+
+.title {
+	@include h3();
+	margin-bottom: $xs;
+
+	@include screen('small-desktop') {
+		@include h4();
+	}
+
+	@include screen('mobile') {
+		@include h5();
+		margin-bottom: $xxs;
+	}
+}
+
+.text {
+	@include textS();
+}
