@@ -1,16 +1,20 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
 
+import { POST_PAGE_ROUTE } from '@/constants/routes'
 import { Post } from '@/types/interfaces'
 
 import css from './PostList.module.scss'
 
 function PostList() {
+	const locale = useLocale()
 	const searchParams = useSearchParams()
+
 	const tCategory = useTranslations('Categories')
 	const tPost = useTranslations('Posts')
 
@@ -40,7 +44,16 @@ function PostList() {
 				})
 			: filteredByCategory
 
-		const filteredPosts = filteredByTagPosts.filter((post) => {
+		const postsWithTranslatedFields = filteredByTagPosts.map((post) => {
+			return {
+				...post,
+				category: { ...post.category, name: tCategory(post.category.name) },
+				text: tPost(post.text),
+				title: tPost(post.title),
+			}
+		})
+
+		const filteredPosts = postsWithTranslatedFields.filter((post) => {
 			return !!(
 				post.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
 				post.text.toLowerCase().includes(currentSearch.toLowerCase())
@@ -51,14 +64,14 @@ function PostList() {
 	return (
 		<div>
 			{postsData?.map(({ category, id, title, img, text }) => (
-				<div key={id} className={css.post}>
+				<Link href={`/${locale}${POST_PAGE_ROUTE}${id}`} key={id} className={css.post}>
 					<Image className={css.postImg} alt="post image" src={img} />
 					<div className={css.postInfo}>
-						<p className={css.postTitle}>{tCategory(category.name)}</p>
-						<p className={css.postDesc}>{tPost(title)}</p>
-						<p className={css.postText}>{tPost(text)}</p>
+						<p className={css.postTitle}>{category.name}</p>
+						<p className={css.postDesc}>{title}</p>
+						<p className={css.postText}>{text}</p>
 					</div>
-				</div>
+				</Link>
 			))}
 		</div>
 	)

@@ -24,6 +24,7 @@
 }
 
 .container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: $m + 16px;
@@ -32,6 +33,10 @@
 	@include screen('mobile') {
 		gap: $m - 8px;
 	}
+}
+
+.loading {
+	opacity: 0.6;
 }
 
 .controls {

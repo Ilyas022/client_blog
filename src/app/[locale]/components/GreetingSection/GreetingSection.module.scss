@@ -104,6 +104,11 @@
 
 .nameMarker {
 	color: $ColorButton;
+	transition: color 0.3s ease;
+
+	&:hover {
+		color: $ColorUser;
+	}
 }
 
 .userInfo {

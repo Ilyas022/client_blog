@@ -1,7 +1,6 @@
 .post {
 	display: flex;
 	gap: $s;
-	align-items: center;
 	transition: background-color 0.3s;
 
 	&:hover {
@@ -45,7 +44,8 @@
 }
 
 .postImg {
-	max-width: $xl3 + 90px;
+	width: $xl3 + 90px;
+	flex: 1 0 auto;
 	max-height: $xl2 + 18px;
 	object-fit: cover;
 

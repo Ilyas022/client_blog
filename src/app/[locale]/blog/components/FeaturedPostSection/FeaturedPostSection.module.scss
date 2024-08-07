@@ -56,6 +56,11 @@
 
 .nameMarker {
 	color: $ColorUser;
+	transition: color 0.3s ease;
+
+	&:hover {
+		color: $ColorButtonHover;
+	}
 }
 
 .postText {
