@@ -18,7 +18,7 @@ function CategorySection() {
 			<h2 className={css.title}>{t('title')}</h2>
 			<div className={css.categories}>
 				{categories.map(({ img, text, title, id }) => (
-					<CategoryItem key={id} img={img} text={text} title={title} />
+					<CategoryItem key={id} img={img} text={text} title={title} id={id} />
 				))}
 			</div>
 		</section>

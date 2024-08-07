@@ -2,7 +2,7 @@
 
 import cn from 'classnames'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useInViewRef } from 'rooks'
 
 import { ABOUT_PAGE_ROUTE } from '@/constants/routes'
@@ -12,6 +12,7 @@ import css from './AboutSection.module.scss'
 function AboutSection() {
 	const [ref, inView] = useInViewRef()
 	const t = useTranslations('About')
+	const locale = useLocale()
 
 	return (
 		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
@@ -24,7 +25,7 @@ function AboutSection() {
 					<h2 className={css.title}>{t('aboutTitle')}</h2>
 					<p className={css.desc}>{t('aboutDesc')}</p>
 					<p className={css.info}>{t('aboutText')}</p>
-					<Link className={css.link} href={ABOUT_PAGE_ROUTE}>
+					<Link className={css.link} href={`/${locale}${ABOUT_PAGE_ROUTE}`}>
 						{t('btn')} &gt;
 					</Link>
 				</div>

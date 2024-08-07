@@ -3,11 +3,11 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useInViewRef } from 'rooks'
 
 import postimg from '@/assets/postImg.png'
-import { POST_PAGE_ROUTE } from '@/constants/routes'
+import { BLOG_PAGE_ROUTE, POST_PAGE_ROUTE } from '@/constants/routes'
 
 import { mockPosts } from './config'
 import css from './FeaturedSection.module.scss'
@@ -15,6 +15,7 @@ import css from './FeaturedSection.module.scss'
 function FeaturedSection() {
 	const [ref, inView] = useInViewRef()
 	const t = useTranslations('Featured')
+	const locale = useLocale()
 
 	return (
 		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
@@ -23,11 +24,11 @@ function FeaturedSection() {
 				<div className={css.post}>
 					<Image src={postimg} alt="post image" className={css.postImg} />
 					<p className={css.userInfo}>
-						{t('by')} John Doe l {t('date')}
+						{t('by')} Floyd Miles l {t('date')}
 					</p>
 					<p className={css.postTitle}>{t('featuredTitle')}</p>
 					<p className={css.postDesc}>{t('featureDesc')}</p>
-					<Link className={css.btn} href={POST_PAGE_ROUTE}>
+					<Link className={css.btn} href={`/${locale}${POST_PAGE_ROUTE}8`}>
 						{t('btn')} &gt;
 					</Link>
 				</div>
@@ -35,7 +36,9 @@ function FeaturedSection() {
 			<div className={css.postsCol}>
 				<div className={css.postsHeader}>
 					<p className={css.postsColTitle}>{t('all')}</p>
-					<div className={css.showPosts}>{t('showAll')}</div>
+					<Link href={`/${locale}${BLOG_PAGE_ROUTE}`} className={css.showPosts}>
+						{t('showAll')}
+					</Link>
 				</div>
 				<div>
 					{mockPosts.map(({ date, title, userInfo }, i) => (

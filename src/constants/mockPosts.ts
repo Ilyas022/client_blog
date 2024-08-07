@@ -1,3 +1,6 @@
+import blogPostImage from '@/assets/blogPostImage.png'
+import homeImg from '@/assets/homeBgImage.png'
+import postImg from '@/assets/postImg.png'
 import businessImg1 from '@/assets/posts/businessPostImg1.png'
 import businessImg2 from '@/assets/posts/businessPostImg2.png'
 import economyImg from '@/assets/posts/economyPostImg1.png'
@@ -93,6 +96,45 @@ export const mockPosts = [
 			name: 'EconomyTitle',
 		},
 		title: '6.title',
+		text: 'text',
+		date: 'date',
+		tags: ['1', '3'],
+	},
+	{
+		id: '7',
+		img: homeImg,
+		author: '0',
+		category: {
+			id: '0',
+			name: 'StartupTitle',
+		},
+		title: '7.title',
+		text: 'text',
+		date: 'date',
+		tags: ['1', '3'],
+	},
+	{
+		id: '8',
+		img: postImg,
+		author: '0',
+		category: {
+			id: '0',
+			name: 'BusinessTitle',
+		},
+		title: '8.title',
+		text: 'text',
+		date: 'date',
+		tags: ['1', '3'],
+	},
+	{
+		id: '9',
+		img: blogPostImage,
+		author: '1',
+		category: {
+			id: '2',
+			name: 'TechnologyTitle',
+		},
+		title: '3.title',
 		text: 'text',
 		date: 'date',
 		tags: ['1', '3'],

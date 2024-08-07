@@ -115,6 +115,11 @@
 
 .showPosts {
 	@include textS();
+	transition: color 0.3s ease;
+
+	&:hover {
+		color: $ColorButton;
+	}
 }
 
 .smallPost {

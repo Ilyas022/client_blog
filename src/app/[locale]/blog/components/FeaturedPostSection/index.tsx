@@ -2,15 +2,17 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import postImage from '@/assets/blogPostImage.png'
-import { POST_PAGE_ROUTE } from '@/constants/routes'
+import { AUTHOR_PAGE_ROUTE, POST_PAGE_ROUTE } from '@/constants/routes'
 
 import css from './FeaturedPostSection.module.scss'
 
 function FeaturedPostSection() {
 	const t = useTranslations('Featured')
+	const locale = useLocale()
+
 	return (
 		<section className={css.section}>
 			<div className={css.container}>
@@ -18,10 +20,14 @@ function FeaturedPostSection() {
 					<h2 className={css.title}>{t('sectionTitle')}</h2>
 					<p className={css.postTitle}>{t('postTitle')} </p>
 					<p className={css.postInfo}>
-						{t('by')} <span className={css.nameMarker}>John Doe</span> l {t('date')}{' '}
+						{t('by')}{' '}
+						<Link href={`/${locale + AUTHOR_PAGE_ROUTE}/1`} className={css.nameMarker}>
+							Dianne Russell
+						</Link>{' '}
+						l {t('date')}{' '}
 					</p>
 					<p className={css.postText}>{t('featureDesc')}</p>
-					<Link className={css.btn} href={POST_PAGE_ROUTE}>
+					<Link className={css.btn} href={`${`/${locale}${POST_PAGE_ROUTE}`}9`}>
 						{t('btn')} &gt;
 					</Link>
 				</div>
