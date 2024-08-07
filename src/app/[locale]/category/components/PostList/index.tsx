@@ -44,7 +44,16 @@ function PostList() {
 				})
 			: filteredByCategory
 
-		const filteredPosts = filteredByTagPosts.filter((post) => {
+		const postsWithTranslatedFields = filteredByTagPosts.map((post) => {
+			return {
+				...post,
+				category: { ...post.category, name: tCategory(post.category.name) },
+				text: tPost(post.text),
+				title: tPost(post.title),
+			}
+		})
+
+		const filteredPosts = postsWithTranslatedFields.filter((post) => {
 			return !!(
 				post.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
 				post.text.toLowerCase().includes(currentSearch.toLowerCase())
@@ -58,9 +67,9 @@ function PostList() {
 				<Link href={`/${locale}${POST_PAGE_ROUTE}${id}`} key={id} className={css.post}>
 					<Image className={css.postImg} alt="post image" src={img} />
 					<div className={css.postInfo}>
-						<p className={css.postTitle}>{tCategory(category.name)}</p>
-						<p className={css.postDesc}>{tPost(title)}</p>
-						<p className={css.postText}>{tPost(text)}</p>
+						<p className={css.postTitle}>{category.name}</p>
+						<p className={css.postDesc}>{title}</p>
+						<p className={css.postText}>{text}</p>
 					</div>
 				</Link>
 			))}
