@@ -2,17 +2,28 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { CATEGORY_PAGE_ROUTE } from '@/constants/routes'
 
 import css from './CategoryItem.module.scss'
 import { CategoryItemProps } from './types'
 
-function CategoryItem({ title, img, text }: CategoryItemProps) {
+function CategoryItem({ title, img, text, id }: CategoryItemProps) {
 	const t = useTranslations('Categories')
+	const locale = useLocale()
+
 	return (
-		<Link href={CATEGORY_PAGE_ROUTE} key={title} className={css.category}>
+		<Link
+			href={{
+				pathname: `/${locale + CATEGORY_PAGE_ROUTE}`,
+				query: {
+					category: id,
+				},
+			}}
+			key={title}
+			className={css.category}
+		>
 			<div className={css.imgContainer}>
 				<Image className={css.img} alt="category logo" src={img} />
 			</div>

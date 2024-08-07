@@ -5,25 +5,25 @@ import technologyIcon from '@/assets/icons/technologyIcon.svg'
 
 export const categories = [
 	{
-		id: 0,
+		id: 1,
 		title: 'BusinessTitle',
 		img: businessIcon,
 		text: 'text',
 	},
 	{
-		id: 1,
+		id: 0,
 		title: 'StartupTitle',
 		img: startUpIcon,
 		text: 'text',
 	},
 	{
-		id: 2,
+		id: 3,
 		title: 'EconomyTitle',
 		img: economyIcon,
 		text: 'text',
 	},
 	{
-		id: 3,
+		id: 2,
 		title: 'TechnologyTitle',
 		img: technologyIcon,
 		text: 'text',

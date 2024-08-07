@@ -3,7 +3,7 @@
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useInViewRef } from 'rooks'
 
 import teamImg from '@/assets/teamImg.png'
@@ -14,6 +14,8 @@ import css from './ReasonSection.module.scss'
 function ReasonSection() {
 	const [ref, inView] = useInViewRef()
 	const t = useTranslations('Reasons')
+	const locale = useLocale()
+
 	return (
 		<section className={cn(css.section, inView && css.sectionVisible)} ref={ref}>
 			<Image className={css.img} alt="team img" src={teamImg} />
@@ -21,7 +23,7 @@ function ReasonSection() {
 				<h2 className={css.title}>{t('title')}</h2>
 				<p className={css.description}>{t('desc')}</p>
 				<p className={css.text}>{t('text')}</p>
-				<Link className={css.btn} href={ABOUT_PAGE_ROUTE}>
+				<Link className={css.btn} href={`/${locale}${ABOUT_PAGE_ROUTE}`}>
 					{t('btn')} &gt;
 				</Link>
 			</div>

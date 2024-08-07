@@ -1,8 +1,11 @@
 .post {
 	display: flex;
 	gap: $s;
-	align-items: center;
 	@include textS();
+
+	&:hover > .postImg {
+		transform: scale(1.04);
+	}
 
 	@include screen('mobile') {
 		gap: $xs;
@@ -25,6 +28,7 @@
 	width: $xl2 - 6px;
 	height: $xl2 + 12px;
 	object-fit: cover;
+	transition: transform 0.3s ease;
 
 	@include screen('tablet') {
 		height: $xl1 + 50px;
