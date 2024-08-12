@@ -21,71 +21,12 @@
 	}
 }
 
-.post {
-	display: flex;
-	gap: $s;
-	align-items: center;
-
-	@include screen('mobile') {
-		gap: $xs;
-	}
-
-	@include screen('(max-width: 550px)') {
-		flex-direction: column;
-	}
-
-	&:not(:last-child) {
-		margin-bottom: $m + 16px;
-
-		@include screen('mobile') {
-			margin-bottom: $s;
-		}
-	}
-}
-
-.postImg {
-	width: 32%;
-	max-height: $xl2 + 20px;
-	object-fit: cover;
-
-	@include screen('tablet') {
-		width: 40%;
-		max-height: $xl1 + 50px;
-	}
-
-	@include screen('mobile') {
-		width: 40%;
-		max-height: $xl1;
-	}
-
-	@include screen('(max-width: 550px)') {
-		width: 100%;
-	}
-}
-
-.postInfo {
-	max-width: $xl4 - 30px;
-
-	@include screen('non-desktop') {
-		max-width: none;
-	}
-}
-
-.postTitle {
-	text-transform: uppercase;
-	margin-bottom: $xs + 4px;
-
-	@include screen('mobile') {
-		margin-bottom: $xxs;
-	}
-}
-
-.postDesc {
+.noPosts {
 	@include h2();
-	margin-bottom: $xs + 4px;
+	margin-top: $xxs - 40px;
 
 	@include screen('mobile') {
-		margin-bottom: $xxs;
-		@include h4();
+		@include h5();
+		margin-top: $xxs - 20px;
 	}
 }
