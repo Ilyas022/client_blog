@@ -25,8 +25,8 @@
 }
 
 .postImg {
-	width: $xl2 - 6px;
-	height: $xl2 + 12px;
+	height: $xl1 + 30px;
+	width: $xl2 + 30px;
 	object-fit: cover;
 	transition: transform 0.3s ease;
 
@@ -54,7 +54,7 @@
 
 .postTitle {
 	text-transform: uppercase;
-	margin-bottom: $xs + 4px;
+	margin-bottom: $xxs + 2px;
 
 	@include screen('tablet') {
 		margin-bottom: $xxs;
@@ -67,6 +67,12 @@
 
 .postDesc {
 	@include h2();
+	line-clamp: 2;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+
 	margin-bottom: $xs;
 
 	@include screen('tablet') {
@@ -83,4 +89,9 @@
 .postText {
 	@include textS();
 	color: $ColorTextLight;
+	line-clamp: 2;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
 }
