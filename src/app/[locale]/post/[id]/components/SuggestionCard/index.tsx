@@ -16,7 +16,9 @@ function SuggestionCard({ date, img, text, title, userName, id }: SuggestionCard
 	const locale = useLocale()
 	return (
 		<Link href={`/${locale}${POST_PAGE_ROUTE}/${id}`} className={css.card}>
-			<Image alt="post image" src={img} className={css.img} />
+			<div className={css.img}>
+				<Image alt="post image" src={img} />
+			</div>
 			<p className={css.postInfo}>
 				{t('by')} <span className={css.userMarker}>{tAuthor(userName)}</span> l {tPost(date)}
 			</p>

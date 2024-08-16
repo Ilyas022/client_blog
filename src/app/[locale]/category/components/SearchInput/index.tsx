@@ -1,5 +1,6 @@
 'use client'
 
+import cn from 'classnames'
 import { useSearchParams, usePathname, useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import React, { useEffect, useState } from 'react'
@@ -8,7 +9,11 @@ import { useDebounce } from '@/hooks/useDebounce'
 
 import css from './SearchInput.module.scss'
 
-function SearchInput() {
+interface SearchInputProps {
+	className?: string
+}
+
+function SearchInput({ className }: SearchInputProps) {
 	const searchParams = useSearchParams()
 	const params = new URLSearchParams(searchParams)
 	const [inputValue, setInputValue] = useState(() => params.get('search') || '')
@@ -23,7 +28,7 @@ function SearchInput() {
 	}
 	const deleteQueryParam = (param: string) => {
 		params.delete(param)
-		replace(`${pathname}?${params.toString()}`)
+		replace(`${pathname}?${params.toString()}`, { scroll: false })
 	}
 
 	useEffect(() => {
@@ -40,7 +45,7 @@ function SearchInput() {
 	}
 
 	return (
-		<div className={css.bar}>
+		<div className={cn(css.bar, className && className)}>
 			<input
 				className={css.input}
 				type="text"

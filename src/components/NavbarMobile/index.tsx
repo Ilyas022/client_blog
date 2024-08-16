@@ -28,17 +28,14 @@ function NavbarMobile({ handleOpen }: NavbarProps) {
 
 	return (
 		<nav className={css.navbar}>
-			<Link
-				href={`/${locale === 'ru' ? 'en' : 'ru'}${pathname.substring(3)}`}
-				onClick={handleClick}
-			>
+			<Link href={`/${locale === 'ru' ? 'en' : 'ru'}${pathname.substring(3)}`}>
 				{locale.toUpperCase()}
 			</Link>
 			{links.map(({ path, title }) => (
 				<Link
 					onClick={handleClick}
 					key={title}
-					href={path}
+					href={`/${locale}${path}`}
 					className={cn(css.link, isActive(path) && css.activeLink)}
 				>
 					{t(title)}

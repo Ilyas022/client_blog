@@ -1,9 +1,8 @@
 .card {
 	max-width: $xl3 + 5px;
-	transition: background-color 0.3s;
 
-	&:hover {
-		background-color: $ColorButton;
+	&:hover > .img > img {
+		transform: scale(1.1);
 	}
 
 	@include screen('tablet') {
@@ -18,8 +17,8 @@
 .img {
 	width: 100%;
 	max-height: $xl2 + 18px;
-	object-fit: cover;
 	margin-bottom: $s;
+	overflow: hidden;
 
 	@include screen('small-desktop') {
 		max-height: $xl1 + 50px;
@@ -31,6 +30,13 @@
 
 	@include screen('(max-width: 600px)') {
 		max-height: $xl1;
+	}
+
+	& > img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s;
 	}
 }
 

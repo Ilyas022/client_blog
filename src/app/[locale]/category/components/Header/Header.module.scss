@@ -1,14 +1,5 @@
 .header {
 	background-color: $ColorPurpleLight;
-	margin-bottom: $xxl + 8px;
-
-	@include screen('tablet') {
-		margin-bottom: $m;
-	}
-
-	@include screen('mobile') {
-		margin-bottom: $s;
-	}
 }
 
 .container {
