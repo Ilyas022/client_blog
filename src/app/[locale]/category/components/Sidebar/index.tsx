@@ -5,7 +5,7 @@ import SearchInput from '../SearchInput'
 function Sidebar() {
 	return (
 		<div className={css.sidebar}>
-			<SearchInput />
+			<SearchInput className={css.search} />
 			<Filters />
 		</div>
 	)

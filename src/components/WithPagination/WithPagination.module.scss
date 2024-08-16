@@ -1,0 +1,27 @@
+.container {
+	position: relative;
+}
+
+.loading {
+	opacity: 0.6;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: $xs + 1px;
+}
+
+.hidden {
+	display: none;
+}
+
+.controlBtn {
+	@include h3();
+
+	&:disabled {
+		@include h4();
+		color: $ColorTextLight;
+	}
+}

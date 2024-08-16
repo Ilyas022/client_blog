@@ -1,0 +1,8 @@
+.container {
+	margin-bottom: $s - 2px;
+	margin-top: $xl;
+
+	@include screen('non-desktop') {
+		margin-top: 0;
+	}
+}

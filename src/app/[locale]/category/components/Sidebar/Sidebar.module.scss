@@ -11,3 +11,15 @@
 		margin-bottom: $m + 10px;
 	}
 }
+
+.search {
+	margin-top: $xl;
+
+	@include screen('tablet') {
+		margin-top: $m;
+	}
+
+	@include screen('mobile') {
+		margin-top: $s;
+	}
+}
