@@ -24,7 +24,6 @@
 }
 
 .container {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: $m + 16px;
@@ -32,25 +31,5 @@
 
 	@include screen('mobile') {
 		gap: $m - 8px;
-	}
-}
-
-.loading {
-	opacity: 0.6;
-}
-
-.controls {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: $xs + 1px;
-}
-
-.controlBtn {
-	@include h3();
-
-	&:disabled {
-		@include h4();
-		color: $ColorTextLight;
 	}
 }

@@ -1,19 +1,21 @@
 'use client'
 
-import Image from 'next/image'
-import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
 
-import { POST_PAGE_ROUTE } from '@/constants/routes'
+import WithPagination from '@/components/WithPagination'
 import { Post } from '@/types/interfaces'
 
+import { processPosts } from './config'
 import css from './PostList.module.scss'
+import PostItem from '../PostItem'
+import PostListSkeleton from '../PostListSkeleton'
 
 function PostList() {
-	const locale = useLocale()
 	const searchParams = useSearchParams()
+
+	const [currentPage, setCurrentPage] = useState(0)
 
 	const tCategory = useTranslations('Categories')
 	const tPost = useTranslations('Posts')
@@ -24,6 +26,8 @@ function PostList() {
 	const currentTag = params.get('tag') || ''
 	const [posts, setPosts] = useState<Post[]>()
 
+	const postsPerPage = 5
+
 	useEffect(() => {
 		const getData = async () => {
 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}posts`)
@@ -32,48 +36,40 @@ function PostList() {
 		}
 		getData()
 	}, [])
+
 	const postsData = useMemo(() => {
 		if (!posts?.length) return
-		const filteredByCategory = currentCategory
-			? posts.filter((post) => currentCategory.includes(post.category.id))
-			: posts
 
-		const filteredByTagPosts = currentTag
-			? filteredByCategory.filter((post) => {
-					return post.tags.some((tag) => currentTag.includes(tag))
-				})
-			: filteredByCategory
+		const startIndex = currentPage * postsPerPage
+		const filteredPosts = processPosts(
+			posts,
+			currentCategory,
+			currentTag,
+			currentSearch,
+			tPost,
+			tCategory
+		)
+		const slicedPosts = filteredPosts.slice(startIndex, startIndex + postsPerPage)
 
-		const postsWithTranslatedFields = filteredByTagPosts.map((post) => {
-			return {
-				...post,
-				category: { ...post.category, name: tCategory(post.category.name) },
-				text: tPost(post.text),
-				title: tPost(post.title),
-			}
-		})
+		return { numberOfPosts: filteredPosts.length, posts: slicedPosts }
+	}, [currentCategory, currentSearch, currentTag, posts, currentPage])
 
-		const filteredPosts = postsWithTranslatedFields.filter((post) => {
-			return !!(
-				post.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
-				post.text.toLowerCase().includes(currentSearch.toLowerCase())
-			)
-		})
-		return filteredPosts
-	}, [currentCategory, currentSearch, currentTag, posts])
+	const onPageChange = (page: number) => setCurrentPage(page)
+
+	if (!postsData) return <PostListSkeleton />
+
 	return (
-		<div>
-			{postsData?.map(({ category, id, title, img, text }) => (
-				<Link href={`/${locale}${POST_PAGE_ROUTE}${id}`} key={id} className={css.post}>
-					<Image className={css.postImg} alt="post image" src={img} />
-					<div className={css.postInfo}>
-						<p className={css.postTitle}>{category.name}</p>
-						<p className={css.postDesc}>{title}</p>
-						<p className={css.postText}>{text}</p>
-					</div>
-				</Link>
-			))}
-		</div>
+		<WithPagination
+			currentPage={currentPage}
+			setCurrentPage={onPageChange}
+			numberOfPosts={postsData.numberOfPosts}
+		>
+			<div className={css.container}>
+				{postsData.posts.map(({ category, id, title, img, text }) => (
+					<PostItem key={id} id={id} category={category} title={title} img={img} text={text} />
+				))}
+			</div>
+		</WithPagination>
 	)
 }
 

@@ -3,8 +3,10 @@
 	gap: $s;
 	transition: background-color 0.3s;
 
-	&:hover {
-		background-color: $ColorButton;
+	@media (hover) {
+		&:hover > .postImg > img {
+			transform: scale(1.1);
+		}
 	}
 
 	@include screen('mobile') {
@@ -45,9 +47,9 @@
 
 .postImg {
 	width: $xl3 + 90px;
+	overflow: hidden;
 	flex: 1 0 auto;
 	max-height: $xl2 + 18px;
-	object-fit: cover;
 
 	@include screen('non-desktop') {
 		max-width: none;
@@ -59,5 +61,12 @@
 	@include screen('mobile') {
 		width: 100%;
 		max-height: $xl2 + 30px;
+	}
+
+	& > img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
 	}
 }

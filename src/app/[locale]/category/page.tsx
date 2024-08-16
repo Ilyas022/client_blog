@@ -6,7 +6,7 @@ import Sidebar from './components/Sidebar'
 function Category() {
 	return (
 		<main>
-			<Header />
+			<Header className={css.header} />
 			<div className={css.container}>
 				<PostList />
 				<Sidebar />
